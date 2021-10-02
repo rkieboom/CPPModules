@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   newZombie.cpp                                      :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/23 17:30:14 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/02 16:27:32 by rkieboom      ########   odam.nl         */
+/*   Created: 2021/09/23 17:30:08 by rkieboom      #+#    #+#                 */
+/*   Updated: 2021/10/02 17:44:31 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* Zombie::newZombie(std::string name)
+int main(void)
 {
-	Zombie* zombie = new Zombie(name);
-	return (zombie);
+	Zombie* zombie;
+	zombie = zombie->zombieHorde(20, "test");
+	
+	return (0);
 }
-

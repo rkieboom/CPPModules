@@ -5,18 +5,18 @@
 #                                                      +:+                     #
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2021/09/23 11:36:27 by rkieboom      #+#    #+#                  #
-#    Updated: 2021/09/30 13:34:35 by rkieboom      ########   odam.nl          #
+#    Created: 2021/09/23 17:30:12 by rkieboom      #+#    #+#                  #
+#    Updated: 2021/10/02 17:36:24 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = zombie
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS =
 
-SRCS = main.cpp phonebook.cpp contact.cpp
+SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
-HEADERS = phonebook.hpp
+HEADERS = Zombie.hpp
 
 O.SRCS = $(SRCS:.c=.o)
 

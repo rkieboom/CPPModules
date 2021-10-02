@@ -1,36 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Account.CPP                                        :+:    :+:            */
+/*   Account.cpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 15:41:26 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/09/23 17:18:37 by rkieboom      ########   odam.nl         */
+/*   Updated: 2021/10/02 15:34:51 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
 
+Account::Account(int v)
+{
+	_amount += v;
+}
+
+Account::~Account()
+{
+	
+}
+
 int Account::getNbAccounts()
 {
-	return _nbAccounts;
+	return 0;
+	// return _nbAccounts;
 }
 
 int	Account::getTotalAmount( void )
 {
-	return _totalAmount;
+	return 0;
+	// return _totalAmount;
 }
 
 int Account::getNbDeposits()
 {
-	return _totalNbDeposits;
+	return 0;
+	// return _totalNbDeposits;
 }
 
 int Account::getNbWithdrawals()
 {
-	return _totalNbWithdrawals;
+	return 0;
+	// return _totalNbWithdrawals;
 }
 
 void Account::displayAccountsInfos(void)
@@ -65,13 +79,13 @@ int		Account::checkAmount() const
 
 void	Account::displayStatus( void ) const
 {
-	std::cout << _accountIndex << std::endl 
-	<< _amount << std::endl << _nbDeposits
-	<< std::endl << _nbWithdrawals << std::endl;
+	// std::cout << _accountIndex << std::endl 
+	// << _amount << std::endl << _nbDeposits
+	// << std::endl << _nbWithdrawals << std::endl;
 }
 
 void	Account::_displayTimestamp( void )
 {
-	std::cout << 1;
+	std::cout << 999;
 }
 
