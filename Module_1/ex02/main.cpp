@@ -5,20 +5,27 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/23 17:30:08 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 13:38:37 by rkieboom      ########   odam.nl         */
+/*   Created: 2021/10/03 13:40:10 by rkieboom      #+#    #+#                 */
+/*   Updated: 2021/10/03 13:56:23 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <string>
+#include <iostream>
 
 int main(void)
 {
-	Zombie* zombie;
-	zombie = zombieHorde(20, "Olaf");
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str;
+	std::string stringREF = str;
+
+	std::cout << "Pointer of str       = " << &str << std::endl;
+	std::cout << "Pointer of stringPTR = " << stringPTR << std::endl;
+	std::cout << "Pointer of stringREF = " << &stringREF << std::endl << std::endl;
+
+	std::cout << "Printing stringPTR = " << *stringPTR << std::endl;
+	std::cout << "Printing stringREF = " << stringREF << std::endl;
 	
-	for (int i = 0; i < 20; i++)
-		zombie[i].announce();
-	delete [] zombie;
+
 	return (0);
 }

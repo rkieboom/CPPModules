@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/23 17:30:21 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 13:36:57 by rkieboom      ########   odam.nl         */
+/*   Created: 2021/10/03 16:31:06 by rkieboom      #+#    #+#                 */
+/*   Updated: 2021/10/03 17:17:34 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Karen.hpp"
 
-#include <iostream>
-#include <string.h>
-
-class Zombie
+int main(void)
 {
-
-	private:
-
-	std::string name;
-
-	public:
-
-	void	announce(void);
-	void	randomChump(std::string name);
-	void	giveName(std::string name);
-
-	Zombie();
-	Zombie(std::string);
-	~Zombie();
-};
-
-	Zombie* zombieHorde(int N, std::string name);
-	Zombie* newZombie(std::string name);
-
-#endif
+	Karen *karen;
+	karen->complain("test");
+	return (0);
+}

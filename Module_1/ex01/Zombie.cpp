@@ -6,11 +6,16 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 17:30:18 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/02 16:48:44 by rkieboom      ########   odam.nl         */
+/*   Updated: 2021/10/03 13:38:51 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie()
+{
+
+}
 
 Zombie::Zombie(std::string s)
 {
@@ -19,7 +24,7 @@ Zombie::Zombie(std::string s)
 
 Zombie::~Zombie(void)
 {
-	std::cout << '<' << name << '>' << " Died!";
+	std::cout << '<' << name << '>' << " Died!\n";
 }
 
 void	Zombie::announce(void)

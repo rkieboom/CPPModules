@@ -5,18 +5,16 @@
 #                                                      +:+                     #
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2021/09/23 17:30:12 by rkieboom      #+#    #+#                  #
-#    Updated: 2021/10/03 13:48:58 by rkieboom      ########   odam.nl          #
+#    Created: 2021/10/03 13:39:57 by rkieboom      #+#    #+#                  #
+#    Updated: 2021/10/03 13:49:07 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = a.out
 
 FLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
-
-HEADERS = Zombie.hpp
+SRCS = main.cpp
 
 O.SRCS = $(SRCS:.c=.o)
 

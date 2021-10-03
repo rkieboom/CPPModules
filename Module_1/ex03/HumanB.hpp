@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   HumanB.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/23 17:30:21 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 13:36:57 by rkieboom      ########   odam.nl         */
+/*   Created: 2021/10/03 14:05:05 by rkieboom      #+#    #+#                 */
+/*   Updated: 2021/10/03 15:00:47 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
 #include <iostream>
-#include <string.h>
+#include <string>
+#include "Weapon.hpp"
 
-class Zombie
+class HumanB
 {
-
 	private:
-
 	std::string name;
+	Weapon *weapon;
 
 	public:
+	void	attack(void);
+	void	setWeapon(Weapon &f_weapon);
 
-	void	announce(void);
-	void	randomChump(std::string name);
-	void	giveName(std::string name);
-
-	Zombie();
-	Zombie(std::string);
-	~Zombie();
+	HumanB();
+	HumanB(std::string);
+	HumanB(std::string, Weapon &);
+	~HumanB();
 };
-
-	Zombie* zombieHorde(int N, std::string name);
-	Zombie* newZombie(std::string name);
 
 #endif

@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   HumanA.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/23 17:30:21 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 13:36:57 by rkieboom      ########   odam.nl         */
+/*   Created: 2021/10/03 14:08:20 by rkieboom      #+#    #+#                 */
+/*   Updated: 2021/10/03 15:02:29 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "HumanA.hpp"
 
-#include <iostream>
-#include <string.h>
-
-class Zombie
+HumanA::HumanA(std::string f_name, Weapon& f_weapon)
 {
+	name = f_name;
+	weapon = &f_weapon;
+}
 
-	private:
+HumanA::~HumanA()
+{
+	
+}
 
-	std::string name;
+void	HumanA::attack(void)
+{
+	if (!weapon)
+		std::cout << name << "  attacks with his fists\n";
+	else
+		std::cout << name << "  attacks with his " << weapon->getType() << std::endl;
+}
 
-	public:
-
-	void	announce(void);
-	void	randomChump(std::string name);
-	void	giveName(std::string name);
-
-	Zombie();
-	Zombie(std::string);
-	~Zombie();
-};
-
-	Zombie* zombieHorde(int N, std::string name);
-	Zombie* newZombie(std::string name);
-
-#endif
+void	HumanA::setWeapon(Weapon &f_weapon)
+{
+	weapon = &f_weapon;
+}
