@@ -6,15 +6,37 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 16:31:09 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 17:04:25 by rkieboom      ########   odam.nl         */
+/*   Updated: 2021/11/06 17:41:22 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
+#include <functional>
+#include <iostream>
+#include <type_traits>
+#include <signal.h>
+
 
 void	Karen::complain(std::string level)
 {
+	typedef  void (Karen::*p)(void);
+
+	std::string arr[4] = {"debug", "info", "warning", "error"};
+	// p a[4] = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error };
+
+	// // std::mem_fn()
 	
+	void		(*p[4]) (void);
+	p[0] = this->debug;
+	p[1] = this->info;
+	p[2] = this->warning;
+	p[3] = this->error;
+	
+	for(int i = 0; i < 4; i++)
+	{
+		if (level == arr[i])
+			p[i];
+	}
 }
 
 void	Karen::debug(void)

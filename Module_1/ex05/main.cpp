@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 16:31:06 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 17:17:34 by rkieboom      ########   odam.nl         */
+/*   Updated: 2021/10/12 14:36:35 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	Karen *karen;
-	karen->complain("test");
+	Karen karen;// = new Karen;
+	karen.complain("info");
 	return (0);
 }

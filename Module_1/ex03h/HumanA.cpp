@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 14:08:20 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 15:02:29 by rkieboom      ########   odam.nl         */
+/*   Updated: 2021/11/06 17:23:29 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ HumanA::HumanA(std::string f_name, Weapon& f_weapon)
 
 HumanA::~HumanA()
 {
-	
+
 }
 
 void	HumanA::attack(void)

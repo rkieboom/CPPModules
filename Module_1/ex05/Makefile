@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 16:30:55 by rkieboom      #+#    #+#                  #
-#    Updated: 2021/10/03 16:31:00 by rkieboom      ########   odam.nl          #
+#    Updated: 2021/11/06 17:26:40 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = replace
 
 FLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp
+SRCS = main.cpp karen.cpp
 
 O.SRCS = $(SRCS:.c=.o)
 
