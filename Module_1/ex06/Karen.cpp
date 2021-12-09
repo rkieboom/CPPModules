@@ -6,17 +6,73 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 16:31:09 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/12/09 18:08:30 by rkieboom      ########   odam.nl         */
+/*   Updated: 2021/12/09 21:28:28 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
+
 void	Karen::complain(std::string level)
 {
-	MFP fp = fmap[level];
 
-	(this->*fp)();
+	enum Speech {debug, info, warning, error, other};
+	Speech s;
+
+	std::map<std::string, MFP>::iterator it = fmap.find(level);
+	if (it == fmap.end())
+		s = other;
+	else
+		s = (it->first());
+	
+	
+	// switch ()
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	// int level_i;
+
+	// if (level.compare("debug"))
+	// 	level_i = 1;
+	// else if (level.compare("info"));
+	// 	level_i = 2;
+	// else if (level.compare("warning"))
+	// 	level_i = 3;
+	// else if (level.compare("error"))
+	// 	level_i = 4;
+	// else
+	// 	level_i = 0;
+	// switch (level)
+	// {
+	// 	case 1:
+	// 		debug();
+	// 		info();
+	// 		warning();
+	// 		error();
+	// 	case 2:
+	// 		info();
+	// 		warning();
+	// 		error();
+	// 	case 3:
+	// 		warning();
+	// 		error();
+	// 	case 4:
+	// 		error();
+	// 	default:
+	// 		std::cout << "" << endl;
+	// }
 }
 
 void	Karen::debug(void)

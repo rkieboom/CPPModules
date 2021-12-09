@@ -5,31 +5,24 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/03 14:15:30 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 15:01:20 by rkieboom      ########   odam.nl         */
+/*   Created: 2021/10/03 16:31:06 by rkieboom      #+#    #+#                 */
+/*   Updated: 2021/12/09 19:42:55 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Karen.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
+	Karen karen;
+
+	if (argc > 1)
 	{
-		Weapon club = Weapon("crude spiked club");
-	
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		karen.complain(argv[1]);
 	}
+	else
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
+		karen.complain("info");
 	}
+	return (0);
 }

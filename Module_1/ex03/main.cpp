@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Karen.hpp                                          :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/03 16:31:21 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/12/09 17:55:36 by rkieboom      ########   odam.nl         */
+/*   Created: 2021/10/03 14:15:30 by rkieboom      #+#    #+#                 */
+/*   Updated: 2021/12/09 16:21:18 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-# define KAREN_HPP
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-#include <iostream>
-#include <string>
-#include <map>
-
-class	Karen
+int main()
 {
-	typedef void (Karen::*MFP)(void);
-	std::map <std::string, MFP> fmap;
-
-	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
-
-	public:
-		Karen(void);
-		void	complain(std::string level);
-};
-
-#endif
+	{
+		Weapon club = Weapon("crude spiked club");
+	
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+}

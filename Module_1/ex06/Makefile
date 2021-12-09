@@ -6,11 +6,11 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 16:30:55 by rkieboom      #+#    #+#                  #
-#    Updated: 2021/12/09 18:37:56 by rkieboom      ########   odam.nl          #
+#    Updated: 2021/12/09 18:40:43 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = karen
+NAME = karenFilter
 
 FLAGS = -Wall -Werror -Wextra
 
