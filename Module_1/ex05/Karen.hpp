@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 16:31:21 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/12/09 17:55:36 by rkieboom      ########   odam.nl         */
+/*   Updated: 2021/12/11 16:34:01 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class	Karen
 		void	error(void);
 
 	public:
-		Karen(void);
 		void	complain(std::string level);
 };
 
