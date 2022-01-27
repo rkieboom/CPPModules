@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   ScavTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 17:04:55 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/01/26 18:07:02 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/01/27 19:33:35 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
+#include <iostream>
+#include <string.h>
 #include "ClapTrap.hpp"
 
-int	main()
+class ScavTrap : public ClapTrap
 {
-	ClapTrap s("Olaf");
-	s.attack("Hoo");
-	s.takeDamage(rand() % 10 + 1);
-	s.beRepaired(1);
-	s.takeDamage(rand() % 10 + 1);
-	s.attack("Ro");
+	public:
+	void attack(const std::string& target);
+	void guardGate();
+	
+	ScavTrap(std::string);
+	~ScavTrap();
+};
 
 
-	return (0);
-}
+
+#endif

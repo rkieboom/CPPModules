@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   DiamondTrap.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 17:04:55 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/01/26 18:07:02 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/01/27 20:16:31 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
+
+#include <iostream>
+#include <string.h>
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-int	main()
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	ClapTrap s("Olaf");
-	s.attack("Hoo");
-	s.takeDamage(rand() % 10 + 1);
-	s.beRepaired(1);
-	s.takeDamage(rand() % 10 + 1);
-	s.attack("Ro");
+	private:
+	std::string name;
+	
+	
+	public:
+	DiamondTrap(std::string);
+	~DiamondTrap();
+};
 
 
-	return (0);
-}
+
+#endif

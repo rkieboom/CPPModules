@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   DiamondTrap.cpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 17:04:55 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/01/26 18:07:05 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/01/27 20:09:13 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int	main()
+DiamondTrap::DiamondTrap(std::string s)
 {
-	ClapTrap s("Olaf");
-	s.attack("Hoo");
-	s.takeDamage(rand() % 10 + 1);
-	s.beRepaired(1);
-	s.takeDamage(rand() % 10 + 1);
-	s.attack("Ro");
+	this->name = s;
+	std::cout << "DiamondTrap: Has been created!" << std::endl;
+}
 
-
-	return (0);
+DiamondTrap::~DiamondTrap()
+{
+	std::cout << "DiamondTrap: " << this->name <<  " Died!" << std::endl;
 }

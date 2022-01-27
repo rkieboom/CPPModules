@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   FragTrap.cpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 17:04:55 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/01/26 18:07:05 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/01/27 20:09:13 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-int	main()
+void FragTrap::highFivesGuys()
 {
-	ClapTrap s("Olaf");
-	s.attack("Hoo");
-	s.takeDamage(rand() % 10 + 1);
-	s.beRepaired(1);
-	s.takeDamage(rand() % 10 + 1);
-	s.attack("Ro");
+	std::cout << "FragTrap: " << this->name << " wants a high five? :)" << std::endl;
+}
 
+FragTrap::FragTrap(std::string s) : ClapTrap(s)
+{
+	std::cout << "FragTrap: Has been created!" << std::endl;
+}
 
-	return (0);
+FragTrap::~FragTrap()
+{
+	std::cout << "FragTrap: " << this->name <<  " Died!" << std::endl;
 }

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   FragTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 17:04:55 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/01/26 18:07:02 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/01/27 20:09:07 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
+#include <iostream>
+#include <string.h>
 #include "ClapTrap.hpp"
 
-int	main()
+class FragTrap : public ClapTrap
 {
-	ClapTrap s("Olaf");
-	s.attack("Hoo");
-	s.takeDamage(rand() % 10 + 1);
-	s.beRepaired(1);
-	s.takeDamage(rand() % 10 + 1);
-	s.attack("Ro");
+	public:
+	void highFivesGuys();
+	
+	FragTrap(std::string);
+	~FragTrap();
+};
 
 
-	return (0);
-}
+
+#endif
