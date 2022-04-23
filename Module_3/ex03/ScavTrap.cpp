@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/26 18:07:05 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 19:39:42 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/01/30 17:40:05 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ void	ScavTrap::guardGate()
 ScavTrap::ScavTrap(std::string s) : ClapTrap(s)
 {
 	std::cout << "ScavTrap: Has been created!" << std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 }
 
 ScavTrap::~ScavTrap()

@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   DiamondTrap.hpp                                    :+:    :+:            */
+/*   ScavTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:02 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 17:08:28 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/23 17:39:00 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/23 18:31:04 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-#include <iostream>
-#include <string.h>
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+# include "ClapTrap.hpp"
 
-class DiamondTrap : public ClapTrap, public ScavTrap, public FragTrap
+class ScavTrap : protected ClapTrap
 {
-	private:
-	std::string name;
-
+	// private:
+	// 	std::string name;
+	// 	int			hitPoints;
+	// 	int			energyPoints;
+	// 	int			attackDamage;
 	public:
-	DiamondTrap(std::string);
-	~DiamondTrap();
+		void	attack(const std::string& target);
+		void	beRepaired(unsigned int amount);
+		void	takeDamage(unsigned int amount);
+		void	guardGate();
+
+	ScavTrap(std::string name);
+	~ScavTrap();
 };
-
-
 
 #endif

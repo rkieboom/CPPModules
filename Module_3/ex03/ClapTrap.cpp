@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/26 18:07:05 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 19:43:12 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/01/30 17:39:17 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ ClapTrap::ClapTrap(std::string s)
 {
 	std::cout << "ClapTrap: Has been created!" << std::endl;
 	this->name = s;
-	this->hitPoints = 100;
-	this->energyPoints = 100;
-	this->attackDamage = 30;
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
 }
 
 ClapTrap::~ClapTrap()

@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   DiamondTrap.cpp                                       :+:    :+:            */
+/*   DiamondTrap.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:05 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 20:09:13 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/23 18:26:15 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/23 20:08:47 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-DiamondTrap::DiamondTrap(std::string s) : virtual ScavTrap(s + "_clap_name"), virtual FragTrap(s + "_clap_name")
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+# include "ClapTrap.hpp"
+
+class DiamondTrap :  protected ScavTrap,  protected FragTrap
 {
-	this->name = s;
+	private:
+		std::string name;
+	public:
+		void	attack(const std::string& name);
+		void	whoAmI();
 
-	std::cout << "DiamondTrap: Has been created!" << std::endl;
-}
+	DiamondTrap(std::string name);
+	~DiamondTrap();
+};
 
-DiamondTrap::~DiamondTrap()
-{
-	std::cout << "DiamondTrap: " << this->name <<  " Died!" << std::endl;
-}
+#endif

@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/26 18:07:05 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 20:09:13 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/01/30 17:40:25 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void FragTrap::highFivesGuys()
 FragTrap::FragTrap(std::string s) : ClapTrap(s)
 {
 	std::cout << "FragTrap: Has been created!" << std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 }
 
 FragTrap::~FragTrap()

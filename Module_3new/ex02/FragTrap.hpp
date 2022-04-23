@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   DiamondTrap.cpp                                       :+:    :+:            */
+/*   FragTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:05 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 20:09:13 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/23 18:16:25 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/23 18:34:37 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-DiamondTrap::DiamondTrap(std::string s) : virtual ScavTrap(s + "_clap_name"), virtual FragTrap(s + "_clap_name")
+#include "ClapTrap.hpp"
+
+class FragTrap : protected ClapTrap
 {
-	this->name = s;
+	public:
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+		void	highFivesGuys();
 
-	std::cout << "DiamondTrap: Has been created!" << std::endl;
-}
+	FragTrap(std::string name);
+	~FragTrap();
+};
 
-DiamondTrap::~DiamondTrap()
-{
-	std::cout << "DiamondTrap: " << this->name <<  " Died!" << std::endl;
-}
+#endif

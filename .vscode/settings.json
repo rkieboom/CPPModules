@@ -67,6 +67,10 @@
 		"__tree": "cpp",
 		"map": "cpp",
 		"__bits": "cpp",
-		"clocale": "cpp"
-	}
+		"clocale": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"variant": "cpp"
+	},
+	"C_Cpp.errorSquiggles": "Disabled"
 }
