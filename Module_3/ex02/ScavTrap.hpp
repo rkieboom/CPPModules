@@ -5,28 +5,26 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:02 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 19:33:35 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/23 17:39:00 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/23 18:34:33 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include <iostream>
-#include <string.h>
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : protected ClapTrap
 {
 	public:
-	void attack(const std::string& target);
-	void guardGate();
-	
-	ScavTrap(std::string);
+		void	attack(const std::string& target);
+		void	beRepaired(unsigned int amount);
+		void	takeDamage(unsigned int amount);
+		void	guardGate();
+
+	ScavTrap(std::string name);
 	~ScavTrap();
 };
-
-
 
 #endif

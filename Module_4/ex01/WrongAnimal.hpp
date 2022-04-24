@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.hpp                                       :+:    :+:            */
+/*   WrongAnimal.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 17:39:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 18:31:04 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:24 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 15:36:01 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-# include "ClapTrap.hpp"
+# include <iostream>
+# include <string>
 
-class ScavTrap : protected ClapTrap
+class WrongAnimal
 {
-	// private:
-	// 	std::string name;
-	// 	int			hitPoints;
-	// 	int			energyPoints;
-	// 	int			attackDamage;
+	protected:
+		std::string type;
 	public:
-		void	attack(const std::string& target);
-		void	beRepaired(unsigned int amount);
-		void	takeDamage(unsigned int amount);
-		void	guardGate();
+		void	makeSound() const;
+		std::string getType() const;
 
-	ScavTrap(std::string name);
-	~ScavTrap();
+	WrongAnimal();
+	~WrongAnimal();
 };
 
 #endif

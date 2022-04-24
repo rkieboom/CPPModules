@@ -5,27 +5,60 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:05 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/30 17:40:25 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/23 18:16:23 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/23 18:22:30 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-void FragTrap::highFivesGuys()
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "FragTrap: " << this->name << " wants a high five? :)" << std::endl;
-}
-
-FragTrap::FragTrap(std::string s) : ClapTrap(s)
-{
-	std::cout << "FragTrap: Has been created!" << std::endl;
+	this->name = name;
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
+	std::cout << "FragTrap " << this->name << " came alive!" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap: " << this->name <<  " Died!" << std::endl;
+	std::cout << "FragTrap " << this->name << " died!" << std::endl;
+}
+
+void	FragTrap::attack(const std::string& target)
+{
+	if (this->energyPoints <= 0)
+		std::cout << "FragTrap " << this->name << " has no energy points!" << std::endl;
+	else if (this->hitPoints <= 0)
+		std::cout << "FragTrap " << this->name << " is dead!" << std::endl;
+	else
+	{
+		std::cout << "FragTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+		this->energyPoints--;
+	}
+}
+void	FragTrap::takeDamage(unsigned int amount)
+{
+	std::cout << "FragTrap " << this->name << " took " << amount << " points damage!" << std::endl;
+	this->hitPoints -= amount;
+}
+
+void	FragTrap::beRepaired(unsigned int amount)
+{
+	if (this->energyPoints <= 0)
+		std::cout << "FragTrap " << this->name << " has no energy points!" << std::endl;
+	else if (this->hitPoints <= 0)
+		std::cout << "FragTrap " << this->name << " is dead!" << std::endl;
+	else
+	{
+		std::cout << "FragTrap " << this->name << " repaired himself " << amount << " points!" << std::endl;
+		this->hitPoints += amount;
+		this->energyPoints--;
+	}
+}
+
+void	FragTrap::highFivesGuys()
+{
+	std::cout << "FragTrap " << this->name << " wants a high five!" << std::endl;
 }

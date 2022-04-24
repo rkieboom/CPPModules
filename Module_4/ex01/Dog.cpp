@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ClapTrap.hpp                                       :+:    :+:            */
+/*   Dog.cpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 17:09:44 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 18:32:47 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:30 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 15:31:22 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#include "Dog.hpp"
 
-# include <iostream>
-# include <string>
-
-class ClapTrap
+Dog::Dog()
 {
-	protected:
-		std::string	name;
-		int			hitPoints;
-		int			energyPoints;
-		int			attackDamage;
-	public:
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+	this->type.assign("Dog");
+	std::cout << "Dog was created!" << std::endl;
+}
 
-	ClapTrap(std::string name);
-	~ClapTrap();
-};
+Dog::~Dog()
+{
+	std::cout << "Dog died :(((((((" << std::endl;
+}
 
-
-#endif
+void Dog::makeSound() const
+{
+	std::cout << "barkkkk........" << std::endl;
+}

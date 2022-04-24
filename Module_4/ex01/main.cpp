@@ -5,24 +5,32 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 17:13:15 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 18:23:32 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:33 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 15:37:04 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-int main(void)
+int	main(void)
 {
-	FragTrap a("Jan");
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	a.attack("Olaf");
-	a.takeDamage(3);
-	a.beRepaired(3);
-	a.highFivesGuys();
-	a.takeDamage(119);
-	a.attack("Olaf");
+	std::cout << "Meta = [" << meta->getType() << "]" << std::endl;
+	std::cout << "i = [" << i->getType() << "]" << std::endl;
+	std::cout << "j = [" << j->getType() << "]" << std::endl;
+	i->makeSound();
+	j->makeSound();
+	meta->makeSound();
+
+	const WrongAnimal* k = new WrongCat();
+
+	std::cout << "k = [" << k->getType() << "]" << std::endl;
+	k->makeSound();
+
 	return (0);
 }

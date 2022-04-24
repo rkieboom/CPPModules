@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Cat.cpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 17:13:15 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 17:34:18 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:26 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 14:01:45 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Cat.hpp"
 
-int main(void)
+Cat::Cat()
 {
-	ClapTrap a("Jan");
+	std::cout << "Cat was created!" << std::endl;
+	// this->type = "Cat";
+	this->type.assign("Cat");
+}
 
-	a.attack("Olaf");
-	a.takeDamage(3);
-	a.beRepaired(3);
-	return (0);
+Cat::~Cat()
+{
+	std::cout << "Cat died :(((((((" << std::endl;
+}
+
+void Cat::makeSound() const
+{
+	std::cout << "miaaauwww.." << std::endl;
 }

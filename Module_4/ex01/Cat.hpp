@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.hpp                                       :+:    :+:            */
+/*   Cat.hpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 17:39:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 19:57:00 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:28 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 15:31:25 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include "ClapTrap.hpp"
+# include "Animal.hpp"
 
-class ScavTrap : virtual protected ClapTrap
+class Cat : public Animal
 {
 	public:
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	guardGate();
+		void	makeSound() const;
 
-	ScavTrap(std::string name);
-	~ScavTrap();
+	Cat();
+	~Cat();
 };
 
 #endif

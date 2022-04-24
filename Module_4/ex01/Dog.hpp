@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FragTrap.hpp                                       :+:    :+:            */
+/*   Dog.hpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 18:16:25 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 18:34:37 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:32 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 14:01:23 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include "ClapTrap.hpp"
+# include "Animal.hpp"
 
-class FragTrap : protected ClapTrap
+class Dog : public Animal
 {
 	public:
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	highFivesGuys();
+		void	makeSound() const;
 
-	FragTrap(std::string name);
-	~FragTrap();
+	Dog();
+	~Dog();
 };
 
 #endif

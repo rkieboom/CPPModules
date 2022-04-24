@@ -5,30 +5,28 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:02 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 17:08:28 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/23 18:26:15 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/23 20:08:47 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-#include <iostream>
-#include <string.h>
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+# include "ClapTrap.hpp"
 
-class DiamondTrap : public ClapTrap, public ScavTrap, public FragTrap
+class DiamondTrap :  protected ScavTrap,  protected FragTrap
 {
 	private:
-	std::string name;
-
+		std::string name;
 	public:
-	DiamondTrap(std::string);
+		void	attack(const std::string& name);
+		void	whoAmI();
+
+	DiamondTrap(std::string name);
 	~DiamondTrap();
 };
-
-
 
 #endif

@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ClapTrap.hpp                                       :+:    :+:            */
+/*   WrongCat.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 17:09:44 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 18:28:48 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:28 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 15:34:09 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include <iostream>
-# include <string>
+# include "WrongAnimal.hpp"
 
-class ClapTrap
+class WrongCat : public WrongAnimal
 {
-	protected:
-		std::string	name;
-		int			hitPoints;
-		int			energyPoints;
-		int			attackDamage;
 	public:
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		void	makeSound() const;
 
-	ClapTrap(std::string name);
-	~ClapTrap();
+	WrongCat();
+	~WrongCat();
 };
-
 
 #endif

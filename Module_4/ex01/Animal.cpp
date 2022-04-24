@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ClapTrap.hpp                                       :+:    :+:            */
+/*   Animal.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 17:09:44 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 18:35:05 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:23 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 14:02:42 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#include "Animal.hpp"
 
-# include <iostream>
-# include <string>
-
-class ClapTrap
+Animal::Animal()
 {
-	protected:
-		std::string	name;
-		int			hitPoints;
-		int			energyPoints;
-		int			attackDamage;
-	public:
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+	std::cout << "Animal has been created!" << std::endl;
+}
 
-	ClapTrap(std::string name);
-	~ClapTrap();
-};
+Animal::~Animal()
+{
+	std::cout << "Animal has died! :(" << std::endl;
+}
 
+void	Animal::makeSound() const
+{
+	std::cout << "Am i even a Animal?" << std::endl;
+}
 
-#endif
+std::string Animal::getType() const
+{
+	return (this->type);
+}

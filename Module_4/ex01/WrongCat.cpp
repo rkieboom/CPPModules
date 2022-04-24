@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   WrongCat.cpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 17:13:15 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 17:42:57 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 15:34:17 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 15:34:48 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "WrongCat.hpp"
 
-int main(void)
+WrongCat::WrongCat()
 {
-	ScavTrap a("Jan");
+	std::cout << "WrongCat was created!" << std::endl;
+	this->type.assign("WrongCat");
+}
 
-	a.attack("Olaf");
-	a.takeDamage(3);
-	a.beRepaired(3);
-	return (0);
+WrongCat::~WrongCat()
+{
+	std::cout << "WrongCat died :(((((((" << std::endl;
+}
+
+void WrongCat::makeSound() const
+{
+	std::cout << "miaaauwww.." << std::endl;
 }

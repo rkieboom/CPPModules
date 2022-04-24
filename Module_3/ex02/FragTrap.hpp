@@ -5,27 +5,26 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:02 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 20:09:07 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/23 18:16:25 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/23 18:34:37 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-#include <iostream>
-#include <string.h>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : protected ClapTrap
 {
 	public:
-	void highFivesGuys();
-	
-	FragTrap(std::string);
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+		void	highFivesGuys();
+
+	FragTrap(std::string name);
 	~FragTrap();
 };
-
-
 
 #endif

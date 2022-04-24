@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.hpp                                       :+:    :+:            */
+/*   WrongAnimal.cpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/23 17:39:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 18:34:33 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 15:33:19 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 15:37:25 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "WrongAnimal.hpp"
 
-# include "ClapTrap.hpp"
-
-class ScavTrap : protected ClapTrap
+WrongAnimal::WrongAnimal()
 {
-	public:
-		void	attack(const std::string& target);
-		void	beRepaired(unsigned int amount);
-		void	takeDamage(unsigned int amount);
-		void	guardGate();
+	std::cout << "WrongAnimal has been created!" << std::endl;
+}
 
-	ScavTrap(std::string name);
-	~ScavTrap();
-};
+WrongAnimal::~WrongAnimal()
+{
+	std::cout << "WrongAnimal has died! :(" << std::endl;
+}
 
-#endif
+void	WrongAnimal::makeSound() const
+{
+	std::cout << "Am i even a Animal?" << std::endl;
+}
+
+std::string WrongAnimal::getType() const
+{
+	return (this->type);
+}

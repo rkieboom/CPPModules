@@ -5,27 +5,20 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 17:28:05 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/23 17:13:15 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/23 17:42:57 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int	main()
+int main(void)
 {
-	ClapTrap clap1("Olaf");
-	ScavTrap scav1("Peter");
-	
-	scav1.attack("Olaf");
-	clap1.takeDamage(20);
-	clap1.attack("Peter");
-	scav1.takeDamage(20);
-	scav1.guardGate();
-	clap1.beRepaired(1);
-	clap1.attack("Peter");
+	ScavTrap a("Jan");
 
-
+	a.attack("Olaf");
+	a.takeDamage(3);
+	a.beRepaired(3);
 	return (0);
 }

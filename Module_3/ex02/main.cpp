@@ -5,26 +5,24 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/01/26 18:07:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/01/27 20:10:18 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/23 17:13:15 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/23 18:23:32 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int	main()
+int main(void)
 {
-	ClapTrap clap1("Olaf");
-	FragTrap frag1("Peter");
-	
-	frag1.attack("Olaf");
-	clap1.takeDamage(20);
-	clap1.attack("Peter");
-	frag1.takeDamage(20);
-	frag1.highFivesGuys();
-	clap1.beRepaired(1);
-	clap1.attack("Peter");
+	FragTrap a("Jan");
 
-
+	a.attack("Olaf");
+	a.takeDamage(3);
+	a.beRepaired(3);
+	a.highFivesGuys();
+	a.takeDamage(119);
+	a.attack("Olaf");
 	return (0);
 }
