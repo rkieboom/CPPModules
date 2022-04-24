@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:23 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/24 14:02:42 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/04/24 17:59:50 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 Animal::Animal()
 {
 	std::cout << "Animal has been created!" << std::endl;
+}
+
+Animal::Animal(const Animal& cpy)
+{
+	this->type = cpy.getType();
 }
 
 Animal::~Animal()

@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:33 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/24 15:37:04 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/04/24 18:20:41 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,42 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-int	main(void)
-{
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+#define NUMBER_OF_ANIMALS 4
 
-	std::cout << "Meta = [" << meta->getType() << "]" << std::endl;
-	std::cout << "i = [" << i->getType() << "]" << std::endl;
-	std::cout << "j = [" << j->getType() << "]" << std::endl;
+int	main2(void)
+{
+	Animal *animals[NUMBER_OF_ANIMALS];
+	for (int i = 0; i < NUMBER_OF_ANIMALS; i++)
+	{
+		if (i % 2)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
+	for (int i = 0; i < NUMBER_OF_ANIMALS; i++)
+		delete animals[i];
+
+	Dog dog;
+	Dog dog2(dog);
+	Dog dog3(dog2);
+	Dog dog4(dog);
+
+	const Animal* j = new Dog(dog3);
+	const Animal* i = new Dog(dog);
+
+
 	i->makeSound();
 	j->makeSound();
-	meta->makeSound();
+	delete j;
+	delete i;
 
-	const WrongAnimal* k = new WrongCat();
 
-	std::cout << "k = [" << k->getType() << "]" << std::endl;
-	k->makeSound();
+	return (0);
+}
 
+int main(void)//nog niet klaar
+{
+	main2();
+	system("leaks program");
 	return (0);
 }

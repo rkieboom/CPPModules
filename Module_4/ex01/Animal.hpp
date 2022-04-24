@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:24 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/24 14:04:31 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/04/24 18:00:11 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ class Animal
 		std::string type;
 	public:
 		virtual void	makeSound() const;
-		std::string getType() const;
+		std::string		getType() const;
 
 	Animal();
-	~Animal();
+	Animal(const Animal& cpy);
+	virtual ~Animal();
 };
 
 #endif
