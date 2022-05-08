@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/05/05 13:45:52 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/05/04 14:33:26 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ endif
 SRCDIR	= ./
 OBJDIR	= bin/
 
-SRCS =	Account.cpp tests.cpp
+SRCS =	main.cpp 
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))

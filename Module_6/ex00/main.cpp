@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   randomChump.cpp                                    :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/23 17:30:16 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/02 16:19:29 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/05/04 14:33:18 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/05/04 15:04:14 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <string>
 
-void Zombie::randomChump( std::string name)
+int	main(int argc, char **argv)
 {
-	Zombie zombie(name);
-	zombie.announce();
+	// int			i;
+	std::string arg;
+
+	if (argc == 1 || argc > 2)
+		return (0);
+	arg = argv[1];
+	// std::cout << arg.find('f');
+	// std::cout << "int = " << std::stoi(arg) << std::endl;
+	return (0);
 }

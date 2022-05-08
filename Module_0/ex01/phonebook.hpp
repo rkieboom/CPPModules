@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 11:46:48 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/09/30 13:18:31 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/05/05 13:40:50 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ class Contacts
 	void	SEARCH(int index);
 	int		contact_exist(void);
 	int		get_ID(void);
-} ;
-
+};
 
 class phoneBook
 {
@@ -43,8 +42,6 @@ class phoneBook
 	public:
 	void	addContact(int ID);
 	void	printContacts();
-} ;
-
-
+};
 
 #endif

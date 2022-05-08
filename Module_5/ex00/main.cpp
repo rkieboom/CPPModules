@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   megaphone.cpp                                      :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/23 11:18:52 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/05/05 13:38:53 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 18:30:23 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/05/04 17:57:42 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string.h>
+#include "Bureaucrat.hpp"
 
-int main(int argc, char **argv)
+int	main(void)
 {
-	int i;
-
-	i = 1;
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-	else
+	try
 	{
-		while (argv[i])
-		{
-			 for (size_t x=0; x<strlen(argv[i]); x++)
-				putchar(toupper(argv[i][x]));
-			i++;
-			if (argv[i])
-				std::cout << " ";
-		}
-		std::cout << std::endl;
+		Bureaucrat s1("Ro", 1);
+		std::cout << "Name = [" << s1.getName() << "]\n";
+		std::cout << "Grade = [" << s1.getGrade() << "]" << std::endl;
+		s1.incre_grade();
+		std::cout << s1;
 	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Exception thrown!" << std::endl;
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "Done!" << std::endl;
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/30 13:33:50 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/09/30 13:34:04 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/05/05 13:41:10 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-void	printInstructions(void)
+static void	printInstructions(void)
 {
 	system("clear");
 	std::cout << "Welcome to the phonebook.\nType \"ADD\" to add a "<<
