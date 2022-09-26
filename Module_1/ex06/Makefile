@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 16:30:55 by rkieboom      #+#    #+#                  #
-#    Updated: 2021/12/09 18:40:43 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/09/26 15:53:08 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = karenFilter
 
 FLAGS = -Wall -Werror -Wextra
 
-SRCS = main.cpp karen.cpp
+SRCS = main.cpp Karen.cpp
 
 O.SRCS = $(SRCS:.c=.o)
 
