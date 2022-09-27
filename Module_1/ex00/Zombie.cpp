@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/23 17:30:18 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/05/05 14:36:24 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/09/26 18:50:27 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 Zombie::Zombie(std::string s)
 {
 	name = s;
+	std::cout << name << ": Constructor called!\n";
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << name << ": " << " Died!\n";
+	std::cout << name << ": Deconstructor called!\n";
 }
 
 void	Zombie::announce(void)

@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 17:34:39 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/24 00:04:39 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/09/26 22:15:58 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int Fixed::getRawBits() const
 {
+	std::cout << "getRawBits member function called!\n";
 	return (this->FixedPoint);
 } 
 
@@ -24,6 +25,7 @@ void Fixed::setRawBits(int const raw)
 
 Fixed::Fixed()
 {
+	this->FixedPoint = 0;
 	std::cout << "Fixed constructor called!\n";
 }
 
@@ -34,16 +36,15 @@ Fixed::~Fixed()
 
 Fixed::Fixed(Fixed &t)
 {
-	this->FixedPoint = t.FixedPoint;
 	std::cout << "Fixed Copy constructor called!\n";
+	this->FixedPoint = t.getRawBits();
 }
 
 Fixed& Fixed::operator= (const Fixed& t)
 {
 	std::cout << "Fixed overload assignment called!\n";
-	this->FixedPoint = t.FixedPoint;
+	this->FixedPoint = t.getRawBits();
 
 	return *this;
-	
 }
 
