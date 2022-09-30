@@ -23,7 +23,7 @@ void	phoneBook::addContact(int ID)
 		i++;
 	if (contact[i].contact_exist())
 	{
-		i = 1;
+		i = 0;
 		lowest_ID = contact[i].get_ID();
 		while (i <= 7)
 		{
