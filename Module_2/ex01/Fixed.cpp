@@ -9,16 +9,16 @@ Fixed::Fixed()
 Fixed::Fixed(int const value)
 {
 	std::cout << "Fixed Int Parametized constructor called!\n";
-	this->value = (value << Fixed::FracBit);
+	this->FixedPoint = (value << Fixed::FracBit);
 }
 
 Fixed::Fixed(float const value)
 {
 	std::cout << "Fixed Float Parametized constructor called!\n";
-	this->value = (float)roundf((float)value * (float)(1 << Fixed::FracBit));
+	this->FixedPoint = (float)roundf((float)value * (float)(1 << Fixed::FracBit));
 }
 
-Fixed::Fixed(Fixed &t)
+Fixed::Fixed(Fixed const &t)
 {
 	std::cout << "Fixed Copy constructor called!\n";
 	this->FixedPoint = t.getRawBits();
@@ -30,12 +30,6 @@ Fixed& Fixed::operator= (const Fixed& t)
 	this->FixedPoint = t.getRawBits();
 
 	return *this;
-}
-
-std::ostream &operator<<(std::ostream &out, Fixed const &value)
-{
-	out << value.toFloat();
-	return (out);
 }
 
 Fixed::~Fixed()
@@ -56,10 +50,16 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return ((float)this->value / (float)(1 << Fixed::bits));
+	return ((float)this->FixedPoint / (float)(1 << Fixed::FracBit));
 }
 
 int Fixed::toInt(void) const
 {
-	return (this->value >> Fixed::bits);
+	return (this->FixedPoint >> Fixed::FracBit);
+}
+
+std::ostream &operator<<(std::ostream &out, Fixed const &value)
+{
+	out << value.toFloat();
+	return (out);
 }
