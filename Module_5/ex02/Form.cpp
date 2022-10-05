@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/30 21:06:05 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/02 22:36:06 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/03 14:33:05 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,6 @@ int			Form::getGradeSign(void)
 int			Form::getGradeExecute(void)
 {
 	return (this->_gradeExecute);
-}
-
-void		Form::beSigned(Bureaucrat &src)
-{
-	if (src.getGrade() > this->getGradeSign())
-		throw Form::GradeTooLowException();
-	else
-		this->_signed = true;
 }
 
 const char *Form::GradeTooLowException::what() const throw()

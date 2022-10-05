@@ -6,14 +6,14 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/10/02 15:16:51 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/04/24 15:52:41 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 # ================================ VARIABLES ================================= #
 
 # The name of your executable
-NAME		= convert
+NAME		= program
 
 # Compiler and compiling flags
 CC	= clang++
@@ -31,7 +31,7 @@ endif
 SRCDIR	= ./
 OBJDIR	= bin/
 
-SRCS =	main.cpp Convert.cpp
+SRCS =	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))

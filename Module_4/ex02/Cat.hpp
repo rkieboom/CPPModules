@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Dog.cpp                                            :+:    :+:            */
+/*   Cat.hpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/24 13:19:30 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:36:42 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:28 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 16:19:23 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-Dog::Dog()
-{
-	std::cout << "Dog constructor called!" << std::endl;
-	this->type.assign("Dog");
-}
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-Dog::~Dog()
+class Cat : public Animal
 {
-	std::cout << "Dog deconstrcutor called!" << std::endl;
-}
+	private:
+		Brain *brain;
+	public:
+		void	makeSound() const;
 
-void Dog::makeSound() const
-{
-	std::cout << "woof woof........" << std::endl;
-}
+	Cat();
+	Cat(const Cat &cpy);
+	~Cat();
+};
+
+#endif

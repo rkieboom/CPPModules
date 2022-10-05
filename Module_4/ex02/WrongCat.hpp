@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Dog.cpp                                            :+:    :+:            */
+/*   WrongCat.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/24 13:19:30 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:36:42 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:28 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 15:34:09 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-Dog::Dog()
-{
-	std::cout << "Dog constructor called!" << std::endl;
-	this->type.assign("Dog");
-}
+# include "WrongAnimal.hpp"
 
-Dog::~Dog()
+class WrongCat : public WrongAnimal
 {
-	std::cout << "Dog deconstrcutor called!" << std::endl;
-}
+	public:
+		void	makeSound() const;
 
-void Dog::makeSound() const
-{
-	std::cout << "woof woof........" << std::endl;
-}
+	WrongCat();
+	~WrongCat();
+};
+
+#endif

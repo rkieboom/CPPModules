@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Dog.cpp                                            :+:    :+:            */
+/*   WrongAnimal.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/24 13:19:30 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:36:42 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/04/24 13:19:24 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/04/24 15:36:01 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-Dog::Dog()
-{
-	std::cout << "Dog constructor called!" << std::endl;
-	this->type.assign("Dog");
-}
+# include <iostream>
+# include <string>
 
-Dog::~Dog()
+class WrongAnimal
 {
-	std::cout << "Dog deconstrcutor called!" << std::endl;
-}
+	protected:
+		std::string type;
+	public:
+		void	makeSound() const;
+		std::string getType() const;
 
-void Dog::makeSound() const
-{
-	std::cout << "woof woof........" << std::endl;
-}
+	WrongAnimal();
+	~WrongAnimal();
+};
+
+#endif

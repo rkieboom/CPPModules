@@ -6,22 +6,20 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/04 14:33:18 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/05/04 15:04:14 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/02 16:06:52 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Convert.hpp"
 
 int	main(int argc, char **argv)
 {
-	// int			i;
-	std::string arg;
+	Convert conv;
 
-	if (argc == 1 || argc > 2)
+	if (argc == 1)
 		return (0);
-	arg = argv[1];
-	// std::cout << arg.find('f');
-	// std::cout << "int = " << std::stoi(arg) << std::endl;
+	conv.setString(argv[1]);
+	conv.ConvertAll();
+	std::cout << conv << std::endl;
 	return (0);
 }

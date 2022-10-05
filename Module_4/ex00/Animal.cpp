@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:23 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/24 14:02:42 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/09/30 03:38:26 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Animal::Animal()
 {
-	std::cout << "Animal has been created!" << std::endl;
+	std::cout << "Animal constructor called!" << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal has died! :(" << std::endl;
+	std::cout << "Animal deconstructor called!" << std::endl;
 }
 
 void	Animal::makeSound() const

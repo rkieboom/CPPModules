@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Dog.cpp                                            :+:    :+:            */
+/*   ShrubberyCreationForm.hpp                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/04/24 13:19:30 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:36:42 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/10/03 12:52:52 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/10/03 14:34:59 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
-Dog::Dog()
-{
-	std::cout << "Dog constructor called!" << std::endl;
-	this->type.assign("Dog");
-}
+# include "Form.hpp"
+# include <iostream>
+# include <string>
 
-Dog::~Dog()
+class ShrubberyCreationForm : private Form
 {
-	std::cout << "Dog deconstrcutor called!" << std::endl;
-}
+private:
 
-void Dog::makeSound() const
-{
-	std::cout << "woof woof........" << std::endl;
-}
+public:
+	ShrubberyCreationForm(std::string &);
+	~ShrubberyCreationForm();
+};
+
+
+
+#endif
