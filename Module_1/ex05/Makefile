@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/09/26 18:58:55 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/10/05 15:55:47 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@
 NAME		= program
 
 # Compiler and compiling flags
-CC	= clang++
-CFLAGS	= -Wall -Werror -Wextra
+CC	= c++
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 # Debug, use with`make DEBUG=1`
 ifeq ($(DEBUG),1)
@@ -31,7 +31,7 @@ endif
 SRCDIR	= ./
 OBJDIR	= bin/
 
-SRCS =	main.cpp Karen.cpp
+SRCS =	main.cpp Harl.cpp
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))

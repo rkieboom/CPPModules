@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 15:15:18 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 16:29:07 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/05 15:25:34 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ int main(void)
 	
 	
 	get_input(&filename, &s1, &s2);
+	
+	found = s2.find(s1);
+	if (found != std::string::npos)
+	{
+		std::cerr << "String can't have the same word\n";
+		exit(1);
+	}
 	file.open(filename, std::fstream::in);
 	newfile.open(filename + ".replace", std::fstream::out);
 	if (!file.is_open() || !newfile.is_open())

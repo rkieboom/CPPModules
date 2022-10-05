@@ -6,19 +6,19 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 16:31:06 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 16:48:03 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/05 15:55:47 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int main(int argc, char **argv)
 {
-	Karen karen;
+	Harl Harl;
 
 	if (argc > 1)
-		karen.complain(argv[1]);
+		Harl.complain(argv[1]);
 	else
-		std::cout << "Invalid input!\n./karenFilter [level]" << std::endl;
+		std::cout << "Invalid input!\n./HarlFilter [level]" << std::endl;
 	return (0);
 }
