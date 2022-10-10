@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Weapon.hpp                                         :+:    :+:            */
+/*   Intern.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/03 13:58:45 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/08 18:32:01 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/10/06 14:23:57 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/10/06 14:28:53 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 #include <iostream>
+#include "Form.hpp"
 
-class Weapon
+class Intern
 {
-	private:
-	std::string type;
-
 	public:
-	const std::string&	getType();
-	void				setType(std::string);
+		Intern();
+		~Intern();
 
-	Weapon();
-	Weapon(std::string);
-	~Weapon();
+		Form& makeForm(std::string& form, std::string& target);
 };
-
 
 #endif

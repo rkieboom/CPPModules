@@ -5,199 +5,277 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/02 15:07:35 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/02 16:32:24 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/10/07 17:59:13 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/10/08 17:15:56 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
-void	Convert::ConvertToInt()
+Convert::Convert(std::string const &str) : input(str), type(NONE)
 {
-	if (isnumber(this->read[0]))
-	{
-		this->intNumber = stoi(this->read);
-		this->intNumberPos = true;
-	}
+	std::cout << "Constructor called!" << std::endl;
+	for (int i = 0; i < 4; i++)
+		this->avaible[i] = false;
+	this->setType();
+	this->parse();
 }
 
-void	Convert::ConvertToFloat()
+Convert::Convert(Convert const &other) : input(other.input), type(other.type)
 {
-	if (isnumber(this->read[0]))
-	{
-		this->floatNumber = std::stof(read);
-		this->floatNumberPos = true;
-	}
-}
+	std::cout << "Copy constructor called" << std::endl;
 
-void	Convert::ConvertToDouble()
-{
-	if (isnumber(this->read[0]))
-	{
-		this->doubleNumber = std::stod(read);
-		this->doubleNumberPos = true;
-	}
-}
-
-void	Convert::ConvertToChar()
-{
-	if (this->intNumberPos && this->intNumber > 32 && this->intNumber < 127)
-	{
-		this->character = this->intNumber;
-		this->characterPos = true;
-	}
-}
-
-
-
-Convert::Convert()
-{
-	this->read = "";
-	this->character = 33;
-	this->doubleNumber = 0;
-	this->intNumber = 0;
-	this->floatNumber = 0;
-
-	this->characterPos = false;
-	this->intNumberPos = false;
-	this->floatNumberPos = false;
-	this->doubleNumberPos = false;
-}
-
-Convert::Convert(std::string const &str)
-{
-	this->read = str;
-	this->character = 33;
-	this->doubleNumber = 0;
-	this->intNumber = 0;
-	this->floatNumber = 0;
-
-	this->characterPos = false;
-	this->intNumberPos = false;
-	this->floatNumberPos = false;
-	this->doubleNumberPos = false;
-}
-
-
-Convert::Convert(Convert const &src)
-{
-	this->read = src.read;
-	this->character = src.character;
-	this->doubleNumber = src.doubleNumber;
-	this->intNumber = src.intNumber;
-	this->floatNumber = src.floatNumber;
-
-	this->characterPos = src.characterPos;
-	this->intNumberPos = src.intNumberPos;
-	this->floatNumberPos = src.floatNumberPos;
-	this->doubleNumberPos = src.doubleNumberPos;
+	this->intValue		= other.intValue;
+	this->charValue		= other.charValue;
+	this->floatValue	= other.floatValue;
+	this->doubleValue	= other.doubleValue;
 }
 
 Convert::~Convert()
 {
-	
+	std::cout << "Deconstructor called!" << std::endl;
 }
 
-Convert& Convert::operator= (const Convert& src)
+Convert& Convert::operator=(Convert const &other)
 {
-	this->read = src.read;
-	this->character = src.character;
-	this->doubleNumber = src.doubleNumber;
-	this->intNumber = src.intNumber;
-	this->floatNumber = src.floatNumber;
+	std::cout << "Copy overload constructor called" << std::endl;
 
-	this->characterPos = src.characterPos;
-	this->intNumberPos = src.intNumberPos;
-	this->floatNumberPos = src.floatNumberPos;
-	this->doubleNumberPos = src.doubleNumberPos;
+	this->type			= other.type;
+	this->intValue		= other.intValue;
+	this->charValue		= other.charValue;
+	this->floatValue	= other.floatValue;
+	this->doubleValue	= other.doubleValue;
 	return *this;
 }
 
-bool	Convert::getIntAvaible()
+void	Convert::setType()
 {
-	return this->intNumberPos;
-}
+	size_t	i = 0;
+	if (this->input.length() == 0)
+		return ;
+	else if (this->input.length() == 1 && !std::isdigit(this->input[0]))
+	{
+		type = CHAR;
+		return ;
+	}
+	if (!this->input.compare("-inff") || !this->input.compare("+inff") ||
+	!this->input.compare("nanf"))
+	{
+		type = FLOAT;
+		return ;
+	}
+	else if (!this->input.compare("-inf") || !this->input.compare("+inf") ||
+	!this->input.compare("nan"))
+	{
+		type = DOUBLE;
+		return ;
+	}
+	if (this->input[i] == '+')
+	{
+		i++;
+		if (this->input.length() == i)
+			return ;
+	}
+	else if (this->input[i] == '-')
+	{
+		i++;
+		if (this->input.length() == i)
+			return ;
+	}
 
-bool	Convert::getFloatAvaible()
-{
-	return this->floatNumberPos;
-}
-bool	Convert::getDoubleAvaible()
-{
-	return this->doubleNumberPos;
-}
-bool	Convert::getCharAvaible()
-{
-	return this->characterPos;
-}
+	if (!std::isdigit(this->input.at(i)))
+		return ;
+	if (this->input.find('.') == std::string::npos)
+	{
+		type = INT;
+		return ;
+	}
 
-
-
-char	Convert::getChar()
-{
-	return this->character;
-}
-int		Convert::getInt()
-{
-	return this->intNumber;
-}
-double	Convert::getDouble()
-{
-	return this->doubleNumber;
-}
-float	Convert::getFloat()
-{
-	return this->floatNumber;
-}
-
-
-
-void	Convert::ConvertAll()
-{
-	this->ConvertToInt();
-	this->ConvertToFloat();
-	this->ConvertToDouble();
-	this->ConvertToChar();
-}
-
-void	Convert::setString(char *str)
-{
-	std::string newstr(str);
-	this->read = newstr;
-}
-
-void	Convert::setString(std::string const &str)
-{
-	this->read = str;
+	if (this->input.find('f') == std::string::npos)
+	{
+		type = DOUBLE;
+		return ;
+	}
+	else
+	{
+		type = FLOAT;
+		return ;
+	}
 }
 
 
-std::ostream& operator<<(std::ostream& out, Convert &conv)
+void	Convert::parseChar()
 {
+	this->avaible[CHAR] = true;
+	this->charValue = this->input.at(0);
+	this->intValue = static_cast<int>(this->charValue);
+	this->doubleValue = static_cast<double>(this->charValue);
+	this->floatValue = static_cast<float>(this->charValue);
+	this->avaible[FLOAT] = true;
+	this->avaible[DOUBLE] = true;
+	this->avaible[INT] = true;
+}
+
+void	Convert::parseInt()
+{
+	if (std::atoi(this->input.c_str()) != std::atol(this->input.c_str()))
+		return ;
+	this->avaible[INT] = true;
+	this->intValue = std::atoi(this->input.c_str());
+	this->charValue = static_cast<char>(this->intValue);
+	this->doubleValue = static_cast<double>(this->intValue);
+	this->floatValue = static_cast<float>(this->intValue);
+	if (this->charValue >= 33 && this->charValue <= 126)
+		this->avaible[CHAR] = true;
+	this->avaible[FLOAT] = true;
+	this->avaible[DOUBLE] = true;
+}
+
+void	Convert::parseDouble()
+{
+	this->avaible[DOUBLE] = true;
+	this->doubleValue = std::atof(this->input.c_str());
+	this->charValue = static_cast<char>(this->doubleValue);
+	this->intValue = static_cast<int>(this->doubleValue);
+	this->floatValue = static_cast<float>(this->doubleValue);
+	if (this->charValue >= 33 && this->charValue <= 126)
+		this->avaible[CHAR] = true;
+	this->avaible[FLOAT] = true;
+	if (this->input.compare("nan"))
+		this->avaible[INT] = true;
+}
+
+void	Convert::parseFloat()
+{
+	this->avaible[FLOAT] = true;
+	this->floatValue = std::stof(this->input.c_str());
+	this->charValue = static_cast<char>(this->floatValue);
+	this->intValue = static_cast<int>(this->floatValue);
+	this->doubleValue = static_cast<double>(this->floatValue);
+	if (this->charValue >= 33 && this->charValue <= 126)
+		this->avaible[CHAR] = true;
+	this->avaible[DOUBLE] = true;
+	if (this->input.compare("nanf"))
+		this->avaible[INT] = true;
+}
+
+
+
+void	Convert::parse()
+{
+	switch (this->getType())
+	{
+		case CHAR:
+			parseChar();
+			break ;
+		case INT:
+			parseInt();
+			break ;
+		case DOUBLE:
+			parseDouble();
+			break ;
+		case FLOAT:
+			parseFloat();
+		case NONE:
+			break ;
+	}
+}
+
+Convert::Type 	Convert::getType(void)
+{
+	return this->type;
+}
+char			Convert::getChar(void)
+{
+	return this->charValue;
+}
+
+int			Convert::getInt(void)
+{
+	return this->intValue;
+}
+
+double			Convert::getDouble(void)
+{
+	return this->doubleValue;
+}
+
+float			Convert::getFloat(void)
+{
+	return this->floatValue;
+}
+
+
+
+bool				Convert::isCharAVBL(void)
+{
+	return (this->avaible[CHAR]);
+}
+
+bool				Convert::isIntAVBL(void)
+{
+	return (this->avaible[INT]);
+}
+
+bool				Convert::isDoubleAVBL(void)
+{
+	return (this->avaible[DOUBLE]);
+}
+
+bool				Convert::isFloatAVBL(void)
+{
+	return (this->avaible[FLOAT]);
+}
+
+
+
+std::ostream	&operator<<(std::ostream& out, Convert &other)
+{
+	switch (other.getType())
+	{
+		case 0:
+			out << "This is type Char" << std::endl;
+			break ;
+		case 1:
+			out << "This is type Int" << std::endl;
+			break ;
+		case 2:
+			out << "This is type Double" << std::endl;
+			break ;
+		case 3:
+			out << "This is type Float" << std::endl;
+			break ;
+		case 4:
+			out << "This is type None" << std::endl;
+			break ;
+	}
+	out << std::endl;
 	out << "char: ";
-	if (conv.getCharAvaible())
-		out << conv.getChar() << "\n";
+	if (other.isCharAVBL())
+		out << "'" << other.getChar() << "'";
 	else
-		out << "Non displayable\n";
-	
+		out << "Non displayable";
+	out << std::endl;
+
 	out << "int: ";
-	if (conv.getIntAvaible())
-		out << conv.getInt() << "\n";
+	if (other.isIntAVBL())
+		out << other.getInt();
 	else
-		out << "impossible\n";
+		out << "impossible";
+	out << std::endl;
 
 	out << "float: ";
-	if (conv.getFloatAvaible())
-		out << std::setprecision(1) << std::fixed << conv.getFloat();
+	if (other.isFloatAVBL())
+		out << other.getFloat() << "f";
 	else
-		out << "nan";
-	out << "f\n";
+		out << "impossible";
+	out << std::endl;
 
 	out << "double: ";
-	if (conv.getDoubleAvaible())
-		out << conv.getDouble();
+	if (other.isDoubleAVBL())
+		out << other.getDouble();
 	else
-		out << "nan";
-	// out << std::setprecision(0);
+		out << "impossible";
+	out << std::endl;
 	return out;
 }

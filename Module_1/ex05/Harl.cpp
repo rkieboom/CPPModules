@@ -14,22 +14,22 @@
 
 void	Harl::complain(std::string level)
 {
-	void	(Harl::*memFunc[4]) ();
-	std::string str[4] = {"debug", "info", "warning", "error"};
-
-	memFunc[0] = &Harl::debug;
-	memFunc[1] = &Harl::info;
-	memFunc[2] = &Harl::warning;
-	memFunc[3] = &Harl::error;
-	for(int i = 0;i < 4; i++)
+	 std::string levels[4] = {
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
+	};
+	void (Harl::*func[4])(void) = {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
+	};
+	for (int i = 0; i < 4; i++)
 	{
-		if (!level.compare(str[i]))
-		{
-			(this->*memFunc[i])();
-			break ;
-		}
-		else if (i == 3)
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		if (levels[i] == level)
+			(this->*func[i])();
 	}
 }
 

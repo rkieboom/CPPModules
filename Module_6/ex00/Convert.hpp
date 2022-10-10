@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   convert.hpp                                        :+:    :+:            */
+/*   Convert.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/02 15:12:19 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/02 16:28:36 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/08 17:14:25 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,52 +16,60 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+# include <cmath>
+# include <cfloat>
+
+
 
 class Convert
 {
 	private:
-		std::string	read;
+		enum Type {
+			CHAR = 0,
+			INT = 1,
+			DOUBLE = 2,
+			FLOAT = 3,
+			NONE = 4
+		};
+		
+		std::string const&	input;
+		Type				type;
+		bool				avaible[4];
 
-		char	character;
-		int		intNumber;
-		float	floatNumber;
-		double	doubleNumber;
-
-		bool	characterPos;
-		bool	intNumberPos;
-		bool	floatNumberPos;
-		bool	doubleNumberPos;
-
-		void	ConvertToInt();
-		void	ConvertToFloat();
-		void	ConvertToDouble();
-		void	ConvertToChar();
+		char				charValue;
+		int					intValue;
+		double				doubleValue;
+		float				floatValue;
+		
+		void				parse();
+		void				parseChar();
+		void				parseInt();
+		void				parseDouble();
+		void				parseFloat();
+		void				setType(void);
 
 	public:
-		Convert();
 		Convert(std::string const &);
 		Convert(Convert const &);
 		~Convert();
+
+		Convert& operator=(Convert const &);
 		
-		Convert &operator= (const Convert &);
+		Type 			getType(void);
+		char			getChar(void);
+		int				getInt(void);
+		double			getDouble(void);
+		float			getFloat(void);
 
-		bool	getIntAvaible();
-		bool	getFloatAvaible();
-		bool	getDoubleAvaible();
-		bool	getCharAvaible();
-
-		char	getChar();
-		int		getInt();
-		double	getDouble();
-		float	getFloat();
-
-		void 	ConvertAll();
-
-		void	setString(char *);
-		void	setString(std::string const &);
-
+		bool				isCharAVBL(void);
+		bool				isIntAVBL(void);
+		bool				isDoubleAVBL(void);
+		bool				isFloatAVBL(void);
+		
+	
+	
 };
 
-std::ostream& operator<<(std::ostream& out, Convert &conv);
+std::ostream	&operator<<(std::ostream& out, Convert &other);
 
 #endif

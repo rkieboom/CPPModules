@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/10/05 14:13:44 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/10/08 18:31:47 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ SRCDIR	= ./
 OBJDIR	= bin/
 
 SRCS =	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+
+HDR = HumanA.hpp HumanB.hpp Weapon.hpp
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))

@@ -51,8 +51,6 @@ void	Harl::complain(std::string level)
 			warning();
 		case 4:
 			error();
-		
-		
 	}
 }
 

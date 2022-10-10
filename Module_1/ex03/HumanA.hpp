@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 14:05:04 by rkieboom      #+#    #+#                 */
-/*   Updated: 2021/10/03 15:02:41 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/08 18:34:46 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HumanA
 {
 	private:
 	std::string name;
-	Weapon *weapon;
+	Weapon &weapon;
 
 	public:
 

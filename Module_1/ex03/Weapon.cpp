@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 14:03:06 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/05 14:29:04 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/08 18:33:32 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Weapon::Weapon()
 	
 }
 
-Weapon::Weapon(std::string str)
+Weapon::Weapon(std::string str) : type(str)
 {
-	weapon = str;
+
 }
 
 Weapon::~Weapon()
@@ -29,10 +29,10 @@ Weapon::~Weapon()
 
 void		Weapon::setType(std::string str)
 {
-	weapon = str;
+	type = str;
 }
 
 const std::string& Weapon::getType()
 {
-	return (weapon);
+	return (type);
 }

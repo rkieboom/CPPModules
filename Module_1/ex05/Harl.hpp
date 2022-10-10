@@ -15,12 +15,10 @@
 
 #include <iostream>
 #include <string>
-#include <map>
 
 class	Harl
 {
 	typedef void (Harl::*MFP)(void);
-	std::map <std::string, MFP> fmap;
 
 	private:
 		void	debug(void);

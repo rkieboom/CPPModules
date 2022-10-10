@@ -6,21 +6,20 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 14:08:21 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/05 14:28:40 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/08 18:37:30 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string f_name)
+HumanB::HumanB(std::string f_name) : name(f_name), weapon(NULL)
 {
-	name = f_name;
+
 }
 
-HumanB::HumanB(std::string f_name, Weapon& f_weapon)
+HumanB::HumanB(std::string f_name, Weapon& f_weapon) : name(f_name), weapon(&f_weapon)
 {
-	name = f_name;
-	weapon = &f_weapon;
+
 }
 
 HumanB::~HumanB()

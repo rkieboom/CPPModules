@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/10/05 14:13:30 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/10/08 18:22:54 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,9 @@ endif
 SRCDIR	= ./
 OBJDIR	= bin/
 
-SRCS =	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS =	Main.cpp Zombie.cpp NewZombie.cpp RandomChump.cpp
+
+HDR = Zombie.hpp
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))
@@ -53,13 +55,13 @@ VPATH := $(SRCDIR) $(OBJDIR) $(shell find $(SRCDIR) -type d)
 all : $(NAME)
 	
 # Compiling
-$(OBJDIR)%.o : %.cpp
+$(OBJDIR)%.o : %.cpp $(HDR)
 	@mkdir -p $(OBJDIR)
 	@printf "$(GR)+$(RC)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Linking
-$(NAME)	: $(SRCS)  $(OBJS)
+$(NAME)	: $(SRCS)  $(OBJS) $(HDR)
 	@printf "\n$(GR)=== Compiled [$(CC) $(CFLAGS)] ===\n--- $(SRC)$(RC)\n"
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	

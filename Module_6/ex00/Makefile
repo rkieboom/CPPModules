@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/10/02 15:16:51 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/10/08 18:42:34 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@
 NAME		= convert
 
 # Compiler and compiling flags
-CC	= clang++
-CFLAGS	= -Wall -Werror -Wextra
+CC	= c++
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 # Debug, use with`make DEBUG=1`
 ifeq ($(DEBUG),1)
@@ -31,7 +31,9 @@ endif
 SRCDIR	= ./
 OBJDIR	= bin/
 
-SRCS =	main.cpp Convert.cpp
+SRCS =	Main.cpp Convert.cpp
+
+HDR = Convert.hpp
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))
@@ -53,13 +55,13 @@ VPATH := $(SRCDIR) $(OBJDIR) $(shell find $(SRCDIR) -type d)
 all : $(NAME)
 	
 # Compiling
-$(OBJDIR)%.o : %.cpp
+$(OBJDIR)%.o : %.cpp $(HDR)
 	@mkdir -p $(OBJDIR)
 	@printf "$(GR)+$(RC)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Linking
-$(NAME)	: $(SRCS)  $(OBJS)
+$(NAME)	: $(SRCS)  $(OBJS) $(HDR)
 	@printf "\n$(GR)=== Compiled [$(CC) $(CFLAGS)] ===\n--- $(SRC)$(RC)\n"
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	
