@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   whatever.hpp                                       :+:    :+:            */
+/*   A.hpp                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/05/04 18:19:03 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/10 17:18:03 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/10/10 15:33:45 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/10/10 16:11:06 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_H
-# define WHATEVER_H
+#ifndef A_HPP
+# define A_HPP
 
-template <class t>
-t	max(t a, t b)
+# include "Base.hpp"
+
+class A : public Base
 {
-	return ((a > b) ? a : b);
+
 };
-
-template <class t>
-t	min(t a, t b)
-{
-	return ((a < b) ? a : b);
-}
-
-template <class t>
-void	swap(t a, t b)
-{
-	t temp;
-
-	temp = b;
-	b = a;
-	a = temp;
-}
 
 #endif

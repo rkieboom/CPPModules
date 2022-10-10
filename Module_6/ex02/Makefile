@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/10/10 17:23:59 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/10/10 16:10:55 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,9 @@ endif
 SRCDIR	= ./
 OBJDIR	= bin/
 
-SRCS =	Main.cpp
+SRCS =	Main.cpp Base.cpp #A.cpp B.cpp C.cpp
 
-HDRS = whatever.hpp
+HDRS = A.hpp B.hpp C.hpp Base.hpp
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))

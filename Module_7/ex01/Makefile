@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/10/10 17:23:59 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/10/10 17:24:19 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ OBJDIR	= bin/
 
 SRCS =	Main.cpp
 
-HDRS = whatever.hpp
+HDRS = 
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))

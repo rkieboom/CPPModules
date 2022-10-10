@@ -6,14 +6,14 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/10/10 17:23:59 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/10/10 15:28:01 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 # ================================ VARIABLES ================================= #
 
 # The name of your executable
-NAME		= program
+NAME		= serialization
 
 # Compiler and compiling flags
 CC	= c++
@@ -31,9 +31,9 @@ endif
 SRCDIR	= ./
 OBJDIR	= bin/
 
-SRCS =	Main.cpp
+SRCS =	Main.cpp Serialization.cpp
 
-HDRS = whatever.hpp
+HDR = Serialization.hpp
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))
@@ -55,13 +55,13 @@ VPATH := $(SRCDIR) $(OBJDIR) $(shell find $(SRCDIR) -type d)
 all : $(NAME)
 	
 # Compiling
-$(OBJDIR)%.o : %.cpp $(HDRS)
+$(OBJDIR)%.o : %.cpp $(HDR)
 	@mkdir -p $(OBJDIR)
 	@printf "$(GR)+$(RC)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Linking
-$(NAME)	: $(SRCS)  $(OBJS) $(HDRS)
+$(NAME)	: $(SRCS)  $(OBJS) $(HDR)
 	@printf "\n$(GR)=== Compiled [$(CC) $(CFLAGS)] ===\n--- $(SRC)$(RC)\n"
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	

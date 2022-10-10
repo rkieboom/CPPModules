@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   whatever.hpp                                       :+:    :+:            */
+/*   Serialization.hpp                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/05/04 18:19:03 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/10 17:18:03 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/10/10 14:54:11 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/10/10 15:27:51 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_H
-# define WHATEVER_H
+#ifndef SERIALIZATION_HPP
+# define SERIALIZATION_HPP
 
-template <class t>
-t	max(t a, t b)
+# include <cstdint>
+# include <iostream>
+
+typedef struct Data_s
 {
-	return ((a > b) ? a : b);
-};
+	int number;
+	std::string name;
+	
+}				Data;
 
-template <class t>
-t	min(t a, t b)
-{
-	return ((a < b) ? a : b);
-}
-
-template <class t>
-void	swap(t a, t b)
-{
-	t temp;
-
-	temp = b;
-	b = a;
-	a = temp;
-}
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
 
 #endif

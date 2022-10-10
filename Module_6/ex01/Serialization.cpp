@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   whatever.hpp                                       :+:    :+:            */
+/*   Serialization.cpp                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/05/04 18:19:03 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/10 17:18:03 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/10/10 14:54:04 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/10/10 15:08:54 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_H
-# define WHATEVER_H
+#include "Serialization.hpp"
 
-template <class t>
-t	max(t a, t b)
+uintptr_t serialize(Data* ptr)
 {
-	return ((a > b) ? a : b);
-};
-
-template <class t>
-t	min(t a, t b)
-{
-	return ((a < b) ? a : b);
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-template <class t>
-void	swap(t a, t b)
+Data* deserialize(uintptr_t raw)
 {
-	t temp;
-
-	temp = b;
-	b = a;
-	a = temp;
+	return (reinterpret_cast<Data*>(raw));
 }
-
-#endif
