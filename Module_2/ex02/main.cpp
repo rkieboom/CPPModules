@@ -8,8 +8,15 @@ int main( void )
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
+	std::cout << "a= " << a << std::endl;
+	std::cout << "b= " << b << std::endl;
+	std::cout << a + b << std::endl;
+	std::cout << a - b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
+	if (a < b)
+		std::cout << "A is smaller";
+	else
+		std::cout << "B is smaller";
+	std::cout << std::endl;
 	return 0;
 }

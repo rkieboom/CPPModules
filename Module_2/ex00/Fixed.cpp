@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/03 17:34:39 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/26 22:15:58 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/12 14:57:26 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ void Fixed::setRawBits(int const raw)
 	this->FixedPoint = raw;
 }
 
-Fixed::Fixed()
+Fixed::Fixed() : FixedPoint(0)
 {
-	this->FixedPoint = 0;
 	std::cout << "Fixed constructor called!\n";
 }
 

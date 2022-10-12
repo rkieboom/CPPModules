@@ -4,8 +4,8 @@
 NAME		= program
 
 # Compiler and compiling flags
-CC	= clang++
-CFLAGS	= -Wall -Werror -Wextra
+CC	= c++
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 # Debug, use with`make DEBUG=1`
 ifeq ($(DEBUG),1)
@@ -20,6 +20,8 @@ SRCDIR	= ./
 OBJDIR	= bin/
 
 SRCS =	main.cpp Fixed.cpp
+
+HDRS = Fixed.hpp
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))
@@ -41,13 +43,13 @@ VPATH := $(SRCDIR) $(OBJDIR) $(shell find $(SRCDIR) -type d)
 all : $(NAME)
 	
 # Compiling
-$(OBJDIR)%.o : %.cpp
+$(OBJDIR)%.o : %.cpp $(HDRS)
 	@mkdir -p $(OBJDIR)
 	@printf "$(GR)+$(RC)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Linking
-$(NAME)	: $(SRCS)  $(OBJS)
+$(NAME)	: $(SRCS)  $(OBJS) $(HDRS)
 	@printf "\n$(GR)=== Compiled [$(CC) $(CFLAGS)] ===\n--- $(SRC)$(RC)\n"
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	
