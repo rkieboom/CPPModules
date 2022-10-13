@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/23 17:38:58 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:23:44 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/13 21:39:44 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,26 +48,6 @@ void ScavTrap::attack(const std::string& target)
 		std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
 		this->energyPoints--;
 	}
-}
-
-void ScavTrap::beRepaired(const unsigned int& amount)
-{
-	if (this->hitPoints <= 0)
-		std::cout << "ScavTrap " << this->name << " is dead!" << std::endl;
-	else if (this->energyPoints <= 0)
-		std::cout << "ScavTrap " << this->name << " has no energy points!" << std::endl;
-	else
-	{
-		std::cout << "ScavTrap " << this->name << " repaired himself " << amount << " points!" << std::endl;
-		this->hitPoints += amount;
-		this->energyPoints--;
-	}
-}
-
-void ScavTrap::takeDamage(const unsigned int& amount)
-{
-	std::cout << "ScavTrap " << this->name << " took " << amount << " points damage!" << std::endl;
-	this->hitPoints -= amount;
 }
 
 void	ScavTrap::guardGate()

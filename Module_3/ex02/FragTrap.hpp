@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/23 18:16:25 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:42:27 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/13 21:42:38 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ class FragTrap : public ClapTrap
 		FragTrap& operator= (const FragTrap& other);
 		~FragTrap();
 
-	void	attack(const std::string& target);
-	void	takeDamage(const unsigned int& amount);
-	void	beRepaired(const unsigned int& amount);
 	void	highFivesGuys();
 };
 

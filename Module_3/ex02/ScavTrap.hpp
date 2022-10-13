@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/23 17:39:00 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:36:01 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/13 21:41:12 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 	
 	void	attack(const std::string& target);
-	void	beRepaired(const unsigned int& amount);
-	void	takeDamage(const unsigned int& amount);
 	void	guardGate();
 };
 
