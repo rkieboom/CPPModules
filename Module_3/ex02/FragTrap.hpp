@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/23 18:16:25 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 18:34:37 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/13 15:42:27 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : protected ClapTrap
+class FragTrap : public ClapTrap
 {
 	public:
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	highFivesGuys();
+		FragTrap(const std::string& name);
+		FragTrap(const FragTrap& other);
+		FragTrap& operator= (const FragTrap& other);
+		~FragTrap();
 
-	FragTrap(std::string name);
-	~FragTrap();
+	void	attack(const std::string& target);
+	void	takeDamage(const unsigned int& amount);
+	void	beRepaired(const unsigned int& amount);
+	void	highFivesGuys();
 };
 
 #endif

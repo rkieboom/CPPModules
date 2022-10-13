@@ -6,15 +6,14 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/23 18:26:37 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/23 20:10:39 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/13 16:15:53 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_ClapTrap"), ScavTrap(name + "_ScavTrap"), FragTrap(name + "_FragTrap"), name(name)
 {
-	this->name = name;
 	this->hitPoints = FragTrap::hitPoints;
 	this->energyPoints = ScavTrap::energyPoints;
 	this->attackDamage = FragTrap::attackDamage;
@@ -31,7 +30,27 @@ void DiamondTrap::attack(const std::string& target)
 	this->ScavTrap::attack(target);
 }
 
+void DiamondTrap::beRepaired(const unsigned int& amount)
+{
+	if (this->energyPoints <= 0)
+		std::cout << "DiamondTrap " << this->name << " has no energy points!" << std::endl;
+	else if (this->hitPoints <= 0)
+		std::cout << "DiamondTrap " << this->name << " is dead!" << std::endl;
+	else
+	{
+		std::cout << "DiamondTrap " << this->name << " repaired himself " << amount << " points!" << std::endl;
+		this->hitPoints += amount;
+		this->energyPoints--;
+	}
+}
+
+void DiamondTrap::takeDamage(const unsigned int& amount)
+{
+	std::cout << "DiamondTrap " << this->name << " took " << amount << " points damage!" << std::endl;
+	this->hitPoints -= amount;
+}
+
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "DiamondTrap name = [" << this->name << "]\nClapTrap name = [" << this->ScavTrap::ClapTrap::name << "]" << std::endl;
+	std::cout << "DiamondTrap name = [" << this->name << "]\nClapTrap name = [" << ClapTrap::name << "]" << std::endl;
 }
