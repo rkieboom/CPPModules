@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/23 17:09:44 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:12:35 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/19 15:18:08 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class ClapTrap
 		~ClapTrap();
 
 	virtual void	attack(const std::string& target);
-	virtual void	takeDamage(const unsigned int& amount);
-	virtual void	beRepaired(const unsigned int& amount);
+	void	takeDamage(const unsigned int& amount);
+	void	beRepaired(const unsigned int& amount);
 };
 
 

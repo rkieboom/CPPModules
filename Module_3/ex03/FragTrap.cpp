@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/23 18:16:23 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/13 15:36:12 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/19 15:22:46 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,38 +34,6 @@ FragTrap& FragTrap::operator= (const FragTrap& other)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap " << this->name << " died!" << std::endl;
-}
-
-void	FragTrap::attack(const std::string& target)
-{
-	if (this->hitPoints <= 0)
-		std::cout << "FragTrap " << this->name << " is dead!" << std::endl;
-	else if (this->energyPoints <= 0)
-		std::cout << "FragTrap " << this->name << " has no energy points!" << std::endl;
-	else
-	{
-		std::cout << "FragTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
-		this->energyPoints--;
-	}
-}
-void	FragTrap::takeDamage(const unsigned int& amount)
-{
-	std::cout << "FragTrap " << this->name << " took " << amount << " points damage!" << std::endl;
-	this->hitPoints -= amount;
-}
-
-void	FragTrap::beRepaired(const unsigned int& amount)
-{
-	if (this->hitPoints <= 0)
-		std::cout << "FragTrap " << this->name << " is dead!" << std::endl;
-	else if (this->energyPoints <= 0)
-		std::cout << "FragTrap " << this->name << " has no energy points!" << std::endl;
-	else
-	{
-		std::cout << "FragTrap " << this->name << " repaired himself " << amount << " points!" << std::endl;
-		this->hitPoints += amount;
-		this->energyPoints--;
-	}
 }
 
 void	FragTrap::highFivesGuys()
