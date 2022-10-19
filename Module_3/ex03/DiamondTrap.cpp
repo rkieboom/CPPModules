@@ -6,13 +6,13 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/23 18:26:37 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/13 16:15:53 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/19 15:14:42 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_ClapTrap"), ScavTrap(name + "_ScavTrap"), FragTrap(name + "_FragTrap"), name(name)
+DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"), ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name"), name(name)
 {
 	this->hitPoints = FragTrap::hitPoints;
 	this->energyPoints = ScavTrap::energyPoints;
