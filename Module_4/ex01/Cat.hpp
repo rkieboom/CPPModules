@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:28 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/24 16:19:23 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/21 16:12:15 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class Cat : public Animal
 		void	makeSound() const;
 
 	Cat();
-	Cat(const Cat &cpy);
-	~Cat();
+	Cat(Cat &other);
+	Cat& operator= (Cat &other);
+	virtual ~Cat();
 };
 
 #endif

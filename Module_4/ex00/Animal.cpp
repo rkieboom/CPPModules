@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:23 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:38:26 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:33:28 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,18 @@
 Animal::Animal()
 {
 	std::cout << "Animal constructor called!" << std::endl;
+}
+
+Animal::Animal(Animal &other) : type(other.type)
+{
+	std::cout << "Animal copy constructor called!" << std::endl;
+}
+
+Animal& Animal::operator= (Animal &other)
+{
+	std::cout << "Animal copy assignment called!" << std::endl;
+	this->type = other.type;
+	return *this;
 }
 
 Animal::~Animal()

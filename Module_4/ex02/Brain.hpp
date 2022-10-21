@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 15:40:59 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/04/24 16:07:20 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:44:16 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Brain
 		std::string ideas[100];
 
 	Brain();
+	Brain(Brain &other);
+	Brain& operator= (Brain &other);
 	~Brain();
 };
 

@@ -6,13 +6,12 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:33 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:52:21 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/21 16:21:55 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 
 #define NUMBER_OF_ANIMALS 4
 
@@ -29,8 +28,16 @@ void	go(void)
 	for (int i = 0; i < NUMBER_OF_ANIMALS; i++)
 		delete animals[i];
 
+	std::cout << "------------------------------------\n";
 	Dog dog;
+	dog.setIdeas("This is my first idea");
+	std::cout << "Type = " << dog.getType() << std::endl;
+	dog.printIdeas();
+	std::cout << "------------------------------------\n";
 	Dog dog2(dog);
+	std::cout << "Type = " << dog.getType() << std::endl;
+	dog2.printIdeas();
+	std::cout << "------------------------------------\n";
 	Dog dog3(dog2);
 	Dog dog4(dog);
 
@@ -44,7 +51,7 @@ void	go(void)
 	delete i;
 }
 
-int main(void)//nog niet klaar
+int main(void)
 {
 	go();
 	system("leaks program");

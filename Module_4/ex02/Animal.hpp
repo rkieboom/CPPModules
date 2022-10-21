@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:24 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:55:39 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/21 16:19:38 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,13 @@ class Animal
 	protected:
 		std::string type;
 	public:
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 		std::string		getType() const;
 
-	protected:
-		Animal();
-
-	public:
-		Animal(const Animal& cpy);
-		virtual ~Animal();
+	Animal();
+	Animal(Animal &other);
+	Animal& operator= (Animal &other);
+	virtual ~Animal();
 };
 
 #endif

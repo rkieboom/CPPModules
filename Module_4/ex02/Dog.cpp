@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:30 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:45:49 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/21 16:06:27 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,21 @@ Dog::Dog()
 	this->brain = new Brain();
 }
 
-Dog::Dog(const Dog &cpy)
+Dog::Dog(Dog &other)
 {
-	std::cout << "Dog copy constructor has been called!" << std::endl;
-	*this = cpy;
+	std::cout << "Dog copy constructor called!" << std::endl;
+	this->type = other.type;
 	this->brain = new Brain();
+	*this->brain = *other.brain;
+}
+
+Dog& Dog::operator= (Dog &other)
+{
+	std::cout << "Dog copy assignment called!" << std::endl;
+	this->type = other.type;
+	this->brain = new Brain();
+	*this->brain = *other.brain;
+	return *this;
 }
 
 Dog::~Dog()
@@ -35,4 +45,20 @@ Dog::~Dog()
 void Dog::makeSound() const
 {
 	std::cout << "barkkkk........" << std::endl;
+}
+
+void	Dog::setIdeas(const std::string &str)
+{
+	int	i = 0;
+	Brain *brain = this->brain;
+	while (!brain->ideas[i].empty())
+		i++;
+	brain->ideas[i].assign(str);
+}
+
+void	Dog::printIdeas(void)
+{
+	Brain *brain = this->brain;
+	for (int i = 0; !brain->ideas[i].empty(); i++)
+		std::cout << "Idea: " << brain->ideas[i] << std::endl;
 }

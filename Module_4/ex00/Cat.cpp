@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:26 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:36:17 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/21 15:34:12 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,19 @@ Cat::Cat()
 {
 	std::cout << "Cat contructor called!" << std::endl;
 	this->type.assign("Cat");
+}
+
+Cat::Cat(Cat &other)
+{
+	std::cout << "Cat copy constructor called!" << std::endl;
+	this->type = other.type;
+}
+
+Cat& Cat::operator= (Cat &other)
+{
+	std::cout << "Cat copy assignment called!" << std::endl;
+	this->type = other.type;
+	return *this;
 }
 
 Cat::~Cat()

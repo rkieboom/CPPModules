@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 13:19:24 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/09/30 03:56:16 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/21 16:12:03 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ class Animal
 		std::string		getType() const;
 
 	Animal();
-	Animal(const Animal& cpy);
+	Animal(Animal &other);
+	Animal& operator= (Animal &other);
 	virtual ~Animal();
 };
 
