@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 18:36:46 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/02 14:54:54 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/11/02 16:03:15 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Bureaucrat
 
 		void			inc_grade();
 		void			dec_grade();
-		std::string		getName();
-		int				getGrade();
+		std::string		getName() const;
+		int				getGrade() const;
 		void			signForm(Form &src);
 		
 		class GradeTooHighException: public std::exception{

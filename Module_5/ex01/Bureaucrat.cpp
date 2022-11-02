@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 18:38:55 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/21 16:33:55 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/11/02 16:09:04 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,27 @@ Bureaucrat& Bureaucrat::operator= (Bureaucrat const &src)
 	return *this;
 }
 
-std::string	Bureaucrat::getName()
+std::string	Bureaucrat::getName() const
 {
 	return (this->name);
 }
 
-int		Bureaucrat::getGrade()
+int		Bureaucrat::getGrade() const
 {
 	return (this->grade);
 }
 
 void	Bureaucrat::signForm(Form &src)
 {
-	if (src.getSigned())
-		std::cout << this->getName() << " signed " << src.getName() << std::endl;
-	else if (this->grade > src.getGradeSign())
-		std::cout << this->getName() << " couldn't sign " << src.getName() << " because grade was to low!" << std::endl;
-	else
-		std::cout << this->getName() << " did not sign " << src.getName() << " yet!" << std::endl;
-
+	try
+	{
+		src.beSigned(*this);
+		std::cout << this->getName() << " signs " << src.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " cannot sign " << src.getName() << " because: " << e.what() << std::endl;
+	}
 }
 
 void	Bureaucrat::inc_grade()

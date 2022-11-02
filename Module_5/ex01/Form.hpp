@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/30 21:06:03 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/03 12:47:52 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/11/02 16:01:52 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ class Form
 
 		Form& operator= (Form const &);
 
-		std::string getName(void);
-		bool		getSigned(void);
-		int			getGradeSign(void);
-		int			getGradeExecute(void);
+		std::string getName(void) const;
+		bool		getSigned(void) const;
+		int			getGradeSign(void) const;
+		int			getGradeExecute(void) const;
 		void		beSigned(Bureaucrat &);
 
 		class GradeTooHighException: public std::exception{

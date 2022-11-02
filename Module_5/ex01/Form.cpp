@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/30 21:06:05 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/02 22:36:06 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/11/02 16:02:11 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,22 @@ Form& Form::operator=(Form const &src)
 
 
 
-std::string Form::getName(void)
+std::string Form::getName(void) const
 {
 	return (this->_name);
 }
 
-bool		Form::getSigned(void)
+bool		Form::getSigned(void) const
 {
 	return (this->_signed);
 }
 
-int			Form::getGradeSign(void)
+int			Form::getGradeSign(void) const
 {
 	return (this->_gradeSign);
 }
 
-int			Form::getGradeExecute(void)
+int			Form::getGradeExecute(void) const
 {
 	return (this->_gradeExecute);
 }
