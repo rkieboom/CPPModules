@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PresidentalPardonForm.cpp                          :+:    :+:            */
+/*   PresidentialPardonForm.cpp                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PresidentalPardonForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-PresidentalPardonForm::PresidentalPardonForm(std::string target) : Form(target, 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form(target, 25, 5)
 {
 	std::cout << target << " constructor called!\n";
 }
 
-PresidentalPardonForm::~PresidentalPardonForm()
+PresidentialPardonForm::~PresidentialPardonForm()
 {
 	std::cout << this->getName() << " deconstructor called!" << std::endl;
 }
 
-void	PresidentalPardonForm::execute(Bureaucrat const & executor) const
+void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	Form::execute(executor);
 	std::cout << this->getName() << " has been pardoned by Zaphod Beeblebrox." << std::endl;

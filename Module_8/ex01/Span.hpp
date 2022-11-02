@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   C.hpp                                              :+:    :+:            */
+/*   Span.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/10 15:33:38 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/26 12:11:40 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/11/01 13:25:03 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/11/01 14:03:56 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_HPP
-# define C_HPP
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
-# include "Base.hpp"
+# include <new>
+# include <exception>
+# include <iostream>
 
-class C : public Base
+class Span
 {
 	public:
-		C();
-		~C();
+		Span(unsigned int);
+		~Span();
+
+	void	addNumber(unsigned int);
+	unsigned int	shortestSpan() const;
+	unsigned int	longestSpan() const;
+	private:
+		const unsigned int	_N;
+		unsigned int		_elementsN;
+		unsigned int		*_number;
 };
 
 #endif

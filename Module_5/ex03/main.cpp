@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 18:30:23 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/06 00:36:00 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/25 23:20:41 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,23 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include "PresidentalPardonForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
+#include <string>
+#include <iostream>
 
 int	main(void)
 {
-	try
+	Bureaucrat burea("olaf", 1);
+	Intern someRandomIntern;
+	Form* rrf;
+	rrf = someRandomIntern.makeForm("randomfile", "Bender");
+	if (rrf)
 	{
-		Bureaucrat	person("Bureaucrat", 1);
-		ShrubberyCreationForm president("Mediamarkt");
-		president.beSigned(person);
-		// president.execute(person);
-		person.executeForm(president);
+		std::cout << "Succes" << std::endl;
+		rrf->beSigned(burea);
+		rrf->execute(burea);
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "\n---------------------\nException thrown\n";
-		std::cerr << e.what() << '\n';
-		std::cerr << "---------------------\n" << std::endl;
-	}
-	
+		
 	return (0);
 }

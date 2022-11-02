@@ -48,6 +48,11 @@
 		"system_error": "cpp",
 		"tuple": "cpp",
 		"type_traits": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"__split_buffer": "cpp",
+		"deque": "cpp",
+		"fstream": "cpp",
+		"iomanip": "cpp",
+		"stack": "cpp"
 	}
 }

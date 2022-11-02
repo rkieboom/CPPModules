@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 15:02:10 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/10 15:29:07 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/25 23:38:23 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,4 @@ int main(void)
 	delete data;
 
 	return (0);
-}`
+}

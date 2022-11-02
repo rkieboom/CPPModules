@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 
@@ -24,7 +24,9 @@ int main(int, char**)
 	{
 		if (mirror[i] != numbers[i])
 		{
-			std::cerr << "didn't save the same value!!" << std::endl;
+			std::cerr << "Mirror=" << mirror[i] << std::endl
+			<< "Number=" << numbers[i] << std::endl;
+			std::cerr << i << ". " << "didn't save the same value!!" << std::endl;
 			return 1;
 		}
 	}
@@ -49,6 +51,6 @@ int main(int, char**)
 	{
 		numbers[i] = rand();
 	}
-	delete [] mirror;//
+	delete [] mirror;
 	return 0;
 }

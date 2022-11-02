@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 18:36:46 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/02 14:54:54 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/25 23:18:47 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form;
 class Bureaucrat
 {
 	public:
-		Bureaucrat(std::string s, int grade);
+		Bureaucrat(std::string const& name, int grade);
 		Bureaucrat(Bureaucrat const &);
 		~Bureaucrat();
 

@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   C.hpp                                              :+:    :+:            */
+/*   easyfind.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/10 15:33:38 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/26 12:11:40 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/10/26 16:07:34 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/10/26 21:06:07 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_HPP
-# define C_HPP
+#include <algorithm>
+#include <iostream>
 
-# include "Base.hpp"
-
-class C : public Base
+template <typename T>
+void	easyfind(T t, int n)
 {
-	public:
-		C();
-		~C();
-};
-
-#endif
+	if (std::find(t.begin(), t.end(), n) == t.end())
+		std::cerr << "Couldn't find the number" << std::endl;
+}

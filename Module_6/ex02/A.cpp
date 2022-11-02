@@ -5,14 +5,19 @@
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/10 15:53:58 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/10 15:54:13 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/10/26 12:11:53 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/10/26 12:12:27 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "A.hpp"
 
-A::A()
+A::A() : Base()
+{
+	
+}
+
+A::~A()
 {
 	
 }

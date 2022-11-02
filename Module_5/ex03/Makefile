@@ -6,7 +6,7 @@
 #    By: rkieboom <rkieboom@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/03 16:05:06 by rkieboom      #+#    #+#                  #
-#    Updated: 2022/10/06 00:37:07 by rkieboom      ########   odam.nl          #
+#    Updated: 2022/10/25 23:11:14 by rkieboom      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 NAME		= program
 
 # Compiler and compiling flags
-CC	= clang++
+CC	= c++
 CFLAGS	= -Wall -Werror -Wextra
 
 # Debug, use with`make DEBUG=1`
@@ -32,10 +32,10 @@ SRCDIR	= ./
 OBJDIR	= bin/
 
 SRCS =	main.cpp Form.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp \
-RobotomyRequestForm.cpp PresidentalPardonForm.cpp
+RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
-INC = Bureaucrat.hpp Form.hpp PresidentalPardonForm.hpp \
-RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+INC = Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
+RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp
 
 # String manipulation magic
 SRC		:= $(notdir $(SRCS))

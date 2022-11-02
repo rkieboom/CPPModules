@@ -6,21 +6,21 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 12:52:45 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/06 00:48:18 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/25 22:58:40 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTALPARDONFROM_HPP
-# define PRESIDENTALPARDONFROM_HPP
+#ifndef PRESIDENTIALARDONFORM_HPP
+# define PRESIDENTIALARDONFORM_HPP
 
 # include "Form.hpp"
 # include "Bureaucrat.hpp"
 
-class PresidentalPardonForm : public Form
+class PresidentialPardonForm : public Form
 {
 	public:
-		PresidentalPardonForm(std::string);
-		~PresidentalPardonForm();
+		PresidentialPardonForm(std::string);
+		~PresidentialPardonForm();
 
 		virtual void	execute(Bureaucrat const & executor) const;
 };

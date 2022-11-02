@@ -6,13 +6,13 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 18:38:55 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/03 12:45:44 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/25 23:18:59 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string s, int grade) : name(s), grade(grade)
+Bureaucrat::Bureaucrat(std::string const& name, int grade) : name(name), grade(grade)
 {
 	std::cout << "Parameterized constructor called!\n";
 	if (grade > 150)

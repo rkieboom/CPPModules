@@ -6,7 +6,7 @@
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/24 18:38:55 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/03 12:45:44 by rkieboom      ########   odam.nl         */
+/*   Updated: 2022/10/21 16:33:55 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Bureaucrat::Bureaucrat(std::string s, int grade) : name(s), grade(grade)
 {
-	std::cout << "Parameterized constructor called!\n";
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
+	std::cout << "Parameterized constructor called!\n";
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src) : name(src.name)

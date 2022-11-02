@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   C.hpp                                              :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkieboom <rkieboom@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/10 15:33:38 by rkieboom      #+#    #+#                 */
-/*   Updated: 2022/10/26 12:11:40 by rkieboom      ########   odam.nl         */
+/*   Created: 2022/11/01 13:24:34 by rkieboom      #+#    #+#                 */
+/*   Updated: 2022/11/01 14:10:27 by rkieboom      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_HPP
-# define C_HPP
+#include <iostream>
+#include "Span.hpp"
 
-# include "Base.hpp"
-
-class C : public Base
+int	main(void)
 {
-	public:
-		C();
-		~C();
-};
+	Span test(5);
 
-#endif
+	test.addNumber(22);
+	test.addNumber(42);
+	test.addNumber(12);
+	test.addNumber(43);
+	test.addNumber(1);
+
+	std::cout << test.shortestSpan() << std::endl;
+	std::cout << test.longestSpan() << std::endl;
+
+	return 0;
+}
