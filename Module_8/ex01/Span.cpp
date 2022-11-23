@@ -34,8 +34,8 @@ void	Span::fillSpan(void)
 	while (this->_numbers.size() < this->_max)
 		this->_numbers.push_back(rand());
 	//Prints the whole list
-	for (std::vector< int >::iterator it = this->_numbers.begin(); it != this->_numbers.end(); ++it)
-		std::cout << *it << std::endl;
+	// for (std::vector< int >::iterator it = this->_numbers.begin(); it != this->_numbers.end(); ++it)
+	// 	std::cout << *it << std::endl;
 
 	//Displays min and max
 	// std::cout << "Min: " << *std::min_element(this->_numbers.begin(), this->_numbers.end()) << std::endl;

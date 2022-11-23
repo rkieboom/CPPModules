@@ -14,6 +14,7 @@
 #include <vector>
 #include <list>
 #include <map>
+#include <iostream>
 
 int	main(void)
 {
@@ -29,7 +30,15 @@ int	main(void)
 	test2.push_back(8);
 	test2.push_back(10);
 
-	easyfind(test, 42);
-	easyfind(test2, 9);
+	try
+	{
+		std::cout << easyfind(test, 42) << std::endl;
+		std::cout << easyfind(test2, 9) << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 	return 0;
 }

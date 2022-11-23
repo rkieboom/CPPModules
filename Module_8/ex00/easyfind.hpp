@@ -12,10 +12,15 @@
 
 #include <algorithm>
 #include <iostream>
+#include <exception>
 
 template <typename T>
-void	easyfind(T t, int n)
+int	easyfind(T t, int n)
 {
-	if (std::find(t.begin(), t.end(), n) == t.end())
-		std::cerr << "Couldn't find the number" << std::endl;
+	typename T::iterator it;
+	it = std::find(t.begin(), t.end(), n);
+
+	if (it == t.end())
+		throw std::runtime_error("Couldn't find the number!");
+	return *it;
 }

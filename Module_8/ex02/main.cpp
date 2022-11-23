@@ -1,65 +1,73 @@
 #include <iostream>
 #include "MutantStack.hpp"
 #include <list>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
 
-static void compareToList()
+int	main()
 {
-	std::list<int> mstack;
-
-	if (mstack.empty())
-		std::cout << "mstack is empty" << std::endl;
-	else
-		std::cout << "mstack is not empty" << std::endl;
-
-	mstack.push_back(5);
-	mstack.push_back(17);
-	std::cout << "top missing here no top() in list" << std::endl;
-	// std::cout << mstack.top() << std::endl; // no top() in list
-	mstack.pop_back();
-	std::cout << mstack.size() << std::endl;
-	mstack.push_back(3); 
-	mstack.push_back(5);
-	mstack.push_back(737);
-	std::list<int>::iterator it = mstack.begin(); std::list<int>::iterator ite = mstack.end();
-	++it;
-	--it;
-	while (it != ite) 
-	{
-		std::cout << *it << std::endl;
-		++it; 
-	}
-	std::cout << "size: " << mstack.size() << std::endl;
-	// std::stack<int> s(mstack); not possible
-}
-
-static void mutantTest()
-{
+	std::cout << "\n default test\n-------------------------------------------------" << std::endl;
+	
 	MutantStack<int> mstack;
-
-	if (mstack.empty())
-		std::cout << "mstack is empty" << std::endl;
-	else
-		std::cout << "mstack is not empty" << std::endl;
 
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << mstack.top() << std::endl;
+
 	mstack.pop();
 	std::cout << mstack.size() << std::endl;
-	mstack.push(3); mstack.push(5); mstack.push(737); //[...] mstack.push(0);
-	MutantStack<int>::iterator it = mstack.begin(); MutantStack<int>::iterator ite = mstack.end();
+
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
-	while (it != ite) {
-		std::cout << *it << std::endl;
-	++it; }
-	std::cout << "size: " << mstack.size() << std::endl;
-}
 
-int	main(void)
-{
-	mutantTest();
-	std::cout << "----------------" << std::endl;
-	compareToList();
-	return 0;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
+
+	std::cout << "\nvector strings\n-------------------------------------------------" << std::endl;
+	MutantStack<std::string, std::vector<std::string> > sstack;
+	sstack.push("1");
+	sstack.push("2");
+	sstack.push("3");
+	sstack.push("4");
+	for (MutantStack<std::string, std::vector<std::string> >::iterator itr = sstack.begin(); itr != sstack.end(); itr++)
+		std::cout << *itr << "\n";
+
+	std::cout << "\nlist double\n-------------------------------------------------" << std::endl;
+
+	MutantStack<double, std::list<double> > dstack;
+	dstack.push(1.2);
+	dstack.push(2.3);
+	dstack.push(4.5);
+	dstack.push(5.6);
+	for (MutantStack<double, std::list<double> >::iterator itr = dstack.begin(); itr != dstack.end(); itr++)
+		std::cout << *itr << "\n";
+	std::cout << "\niterators\n-------------------------------------------------" << std::endl;
+	{
+		MutantStack<int> stack;
+
+		int max = 10;
+		for (int i = 0; i < max; i++)
+			stack.push(i);
+		std::cout << "reverse iterator\n";
+		for (MutantStack<int>::reverse_iterator rit = stack.rbegin(); rit != stack.rend(); rit++)
+			std::cout << ' ' << *rit << std::endl;
+		std::cout << "normal iterator\n";
+  		for (MutantStack<int>::iterator it = stack.begin(); it != stack.end(); it++)
+			std::cout << ' ' << *it << std::endl;
+	}
+	return (0);
 }
