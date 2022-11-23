@@ -26,7 +26,7 @@ t	min(t a, t b)
 }
 
 template <class t>
-void	swap(t a, t b)
+void	swap(t &a, t &b)
 {
 	t temp;
 

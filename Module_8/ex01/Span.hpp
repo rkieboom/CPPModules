@@ -16,6 +16,7 @@
 # include <new>
 # include <exception>
 # include <iostream>
+# include <vector>
 
 class Span
 {
@@ -23,13 +24,13 @@ class Span
 		Span(unsigned int);
 		~Span();
 
-	void	addNumber(unsigned int);
-	unsigned int	shortestSpan() const;
-	unsigned int	longestSpan() const;
+	void	addNumber(int const &num);
+	void	fillSpan(void);
+	int		shortestSpan() const;
+	int		longestSpan() const;
 	private:
-		const unsigned int	_N;
-		unsigned int		_elementsN;
-		unsigned int		*_number;
+		const unsigned int		_max;
+		std::vector<int>		_numbers;
 };
 
 #endif

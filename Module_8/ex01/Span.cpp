@@ -12,31 +12,63 @@
 
 #include "Span.hpp"
 
-Span::Span(unsigned int N) : _N(N), _elementsN(0), _number(new unsigned int[N]())
+Span::Span(unsigned int N) : _max(N)
 {
-	if (!this->_number)
-		throw std::bad_alloc();
+
 }
 
 Span::~Span()
 {
-	delete [] this->_number;
 }
 
-void Span::addNumber(unsigned int num)
+void Span::addNumber(int const &num)
 {
-	if (this->_elementsN == this->_N)//throw exeception
-
-	this->_number[this->_elementsN] = num;
-	this->_elementsN++;
+	if (this->_numbers.size() == this->_max)
+		throw std::runtime_error("Array already filled up!");
+	this->_numbers.push_back(num);
 }
 
-unsigned int Span::shortestSpan() const
+void	Span::fillSpan(void)
 {
-	
+	srand(time(0));
+	while (this->_numbers.size() < this->_max)
+		this->_numbers.push_back(rand());
+	//Prints the whole list
+	for (std::vector< int >::iterator it = this->_numbers.begin(); it != this->_numbers.end(); ++it)
+		std::cout << *it << std::endl;
+
+	//Displays min and max
+	// std::cout << "Min: " << *std::min_element(this->_numbers.begin(), this->_numbers.end()) << std::endl;
+	// std::cout << "Max: " << *std::max_element(this->_numbers.begin(), this->_numbers.end()) << std::endl;
 }
 
-unsigned int Span::longestSpan() const
+int Span::shortestSpan() const
 {
-	
+	int	shortestSpan;
+	std::vector< int > copy(this->_numbers);
+	if (this->_numbers.size() <= 1)
+		throw std::runtime_error("Span could not be found!");
+	std::sort(copy.begin(), copy.end(), std::greater<int>());
+	shortestSpan = *copy.begin() - *(copy.begin() + 1);
+	for (std::vector< int >::const_iterator it = copy.begin(); it != copy.end(); ++it)
+	{
+		if (it + 1 != copy.end())
+		{
+			if ((*it - *(it + 1)) < shortestSpan)
+				shortestSpan = *it - *(it + 1);
+		}
+	}
+	return shortestSpan;
+}
+
+int Span::longestSpan() const
+{
+	int lowest, highest;
+	if (this->_numbers.size() <= 1)
+		throw std::runtime_error("Span could not be found!");
+
+	lowest = *std::min_element(this->_numbers.begin(), this->_numbers.end());
+	highest = *std::max_element(this->_numbers.begin(), this->_numbers.end());
+
+	return highest - lowest;
 }
