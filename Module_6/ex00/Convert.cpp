@@ -264,16 +264,29 @@ std::ostream	&operator<<(std::ostream& out, Convert &other)
 		out << "impossible";
 	out << std::endl;
 
+	if (other.getType() == 0 || other.getType() == 1)
+		out << std::setprecision(1);
+
 	out << "float: ";
 	if (other.isFloatAVBL())
-		out << other.getFloat() << "f";
+	{
+		if (other.getType() == 0 || other.getType() == 1)
+			out << std::fixed << other.getFloat() << "f";
+		else
+			out << other.getFloat() << "f";
+	}
 	else
 		out << "impossible";
 	out << std::endl;
 
 	out << "double: ";
 	if (other.isDoubleAVBL())
-		out << other.getDouble();
+	{
+		if (other.getType() == 0 || other.getType() == 1)
+			out << std::fixed << other.getDouble();
+		else
+			out << other.getDouble();
+	}
 	else
 		out << "impossible";
 	out << std::endl;

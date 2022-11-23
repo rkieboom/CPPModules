@@ -15,6 +15,7 @@
 int main(void)
 {
 	Data *data = new Data;
+	Data *newdata = nullptr;
 	uintptr_t ptr;
 
 	data->name = "Rowan";
@@ -22,8 +23,8 @@ int main(void)
 	std::cout << "Data ptr = " << data << std::endl;
 	ptr = serialize(data);
 	std::cout << "Ptr = " << ptr << std::endl;
-	data = deserialize(ptr);
-	std::cout << "Data ptr = " << data << std::endl;	
+	newdata = deserialize(ptr);
+	std::cout << "Data ptr = " << newdata << std::endl;	
 	
 	delete data;
 
